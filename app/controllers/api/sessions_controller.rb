@@ -2,7 +2,7 @@ class Api::SessionsController < ApplicationController
     def create
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user
-            login(@user)
+            login!(@user)
             render "api/users/show"
         else
             render json: ["Invalid email/password combination"], status: 401
@@ -10,10 +10,10 @@ class Api::SessionsController < ApplicationController
     end
 
     def destroy
-        @user = find_by(id: params[:id])
+        @user = current_user
         if @user 
-            logout
-            render "api/users/show"
+            logout!
+            render "api/users/show" ##after destroy should it still fetch the user info???
         else 
             render json: ["Nobody signed in"], status: 404
         end
