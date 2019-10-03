@@ -2,13 +2,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100vh;
 }
 
 .signup-login-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 150px 400px;
+    align-items: center;
+    margin: auto;
     width: 800px;
 }
 
@@ -108,7 +110,7 @@
 }
 
 .signup-login-page-image {
-    width: 350px;
+    width: auto;
     height: 350px;
 }
 
