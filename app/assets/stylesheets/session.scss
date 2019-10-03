@@ -1,12 +1,15 @@
 .signup-login-page {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .signup-login-container {
     display: flex;
-    margin: 150px 150px;
+    flex-direction: row;
     justify-content: space-between;
+    margin: 150px 400px;
+    width: 800px;
 }
 
 .navbar {
@@ -94,16 +97,20 @@
 .seperator {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-size: 15px;
     color: #666666;
-    // padding-inline-start: 2px;
-    // padding-inline-end: 2px;
-    // vertical-align: baseline; 
+    padding-bottom: 10px;
 }
 
 .signup-login-footer {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.signup-login-page-image {
+    width: 350px;
+    height: 350px;
+}
+
 
 

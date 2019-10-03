@@ -2,11 +2,18 @@
     width: 80%;
     height: 800px;
     background-image: url('splash_background');
+    background-size: cover;
     padding: 20px 100px;
 }
 
 .login-signup {
     display: flex;
+    justify-content: flex-end;
+}
+
+.header-group {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
 }
 
@@ -52,4 +59,25 @@
     border-bottom-width: 2px;
     border-bottom-color: white;
 }
+
+.header-button {
+    margin-left: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: white;
+}
+
+.header-button:hover {
+    background-color: white;
+    color: #666666;
+}
+
+.header-name {
+    text-align: center;
+    vertical-align: center;
+}
+
 
