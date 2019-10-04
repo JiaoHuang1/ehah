@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 // import { signup, login, logout } from './util/session_api_util';
-import { signup, login, logout } from './actions/session_actions';
+// import { signup, login, logout } from './actions/session_actions';
+// import { fetchSingleBusiness } from './util/business_api_util';
+import { fetchSingleBusiness } from './actions/business_action';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+
+  window.store = store;
+  window.fetchSingleBusiness = fetchSingleBusiness;
 
   ReactDOM.render(<Root store={store}/>, root);
 });
