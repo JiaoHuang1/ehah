@@ -14,11 +14,27 @@
     width: 800px;
 }
 
+.whole-form-except-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 300px;
+}
+
+.whole-form-except-last-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar {
+    height: 64px;
     background-color: #d32323;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 .login-form-box {
@@ -44,6 +60,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
+    margin-bottom: 30px;
 }
 
 .signup-link {
@@ -52,66 +69,95 @@
 }
 
 .login-input {
-    width: 250px;
-    height: 40px;
+    width: 100%;
     box-sizing: border-box;
     margin-bottom: 10px;
     padding: 5px 10px;
     font-size: 15px;
-    border-radius: 5px;
+    border-radius: 3px;
+    border: 1px solid #999;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#session-submit {
+.session-submit {
     display: flex;
     justify-content: center;
-    width: 250px;
-    height: 40px;
+    width: 300px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
-    padding: 5px 10px;
     margin-bottom: 10px;
     background-color: #d32323;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 12px 10px;
+    border-radius: 3px;
     box-sizing: border-box;
     cursor: pointer;
 }
 
+.session-submit:hover {
+    background-color: #d44e4e;
+    border: 1px solid #d32323;
+}
+
+
 .demo-submit {
     display: flex;
     justify-content: center;
-    width: 250px;
-    height: 40px;
+    width: 300px;
     font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #666666;
-    padding: 5px 10px;
+    // margin-top: 30px;
     margin-bottom: 10px;
     box-sizing: border-box;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
     box-sizing: border-box;
     cursor: pointer;
 }
 
 .seperator {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    color: #666666;
-    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    margin-bottom: 20px;
 }
+
+.seperator div {
+    border: 0.1px solid #ccc;
+    width: 50px;
+    height: 1px;
+    padding-right: 68px;
+
+}
+
+.seperator span {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666666;
+}
+
 
 .signup-login-footer {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
 }
 
 .signup-login-page-image {
     width: auto;
     height: 350px;
+}
+
+.error-messages {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 

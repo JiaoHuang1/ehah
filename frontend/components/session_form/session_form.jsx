@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="error-messages">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -66,13 +66,13 @@ class SessionForm extends React.Component {
         </p>
       )
       demoUserButton = (
-        <div>
+        <>
           <input onClick={this.handleDemoUserLogIn} className="demo-submit" type="submit" value="Demo Login" />
-          <p className="seperator">OR</p>
-        </div>
+          <p className="seperator"><div></div><span>OR</span><div></div></p>
+        </>
       )
       footer = (
-        <p>New to eHah? 
+        <p className="signup-login-footer">New to eHah? 
           <Link className="signup-link" to="/signup"> Sign up</Link>
         </p>
       )
@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
       title = "Sign Up for eHah";
       subTitle = "Connect with great local businesses";
       signUpNames = (
-        <div>
+        <>
           {/* First Name Input */}
           <input type="text"
             value={this.state.first_name}
@@ -88,7 +88,6 @@ class SessionForm extends React.Component {
             className="login-input"
             placeholder="First Name"
           />
-          <br/>
 
           {/* Last Name Input */}
           <input type="text"
@@ -97,7 +96,7 @@ class SessionForm extends React.Component {
             className="login-input"
             placeholder="Last Name"
           />
-        </div>
+        </>
       )
       signUpZipcode = (
         // zipcode input
@@ -109,7 +108,7 @@ class SessionForm extends React.Component {
         />
       )
       footer = (
-        <p>Already on eHah? 
+        <p className="signup-login-footer">Already on eHah? 
           <Link className="signup-link" to="/login"> Login</Link>
         </p>
       )
@@ -124,40 +123,42 @@ class SessionForm extends React.Component {
         </header>
 
         <section className="signup-login-container">
-          <div className="whole-form-including-demo">
-            {this.renderErrors()}
-            <h1 className="signup-login-title">{title}</h1>
-            <h2 className="signup-login-subtitle">{subTitle}</h2>     
-            <br/>
-            {signUpNames}
-            {demoUserButton}
+          <div className="whole-form-except-img">
+            <div className="whole-form-except-last-signup">
+              {this.renderErrors()}
+              <h1 className="signup-login-title">{title}</h1>
+              <h2 className="signup-login-subtitle">{subTitle}</h2>     
+              {signUpNames}
+              {demoUserButton}
 
-            <form onSubmit={this.handleSubmit} className="login-form-box">
+              <form onSubmit={this.handleSubmit} className="login-form-box">
 
-              <div className="login-form">  
-                {/* email input */}
-                <input type="text"
-                  value={this.state.email}
-                  onChange={this.handleChange('email')}
-                  className="login-input"
-                  placeholder="Email"
-                />
-                <br/>
-                {/* password input */}
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.handleChange('password')}
-                  className="login-input"
-                  placeholder="Password"
-                />
-                <br/>
-                {signUpZipcode}
-                <br/>
-                <input id="session-submit" type="submit" value={this.props.formType} />
-                <h3 className="signup-login-footer">{footer}</h3>
-              </div>
-          
-            </form>
+                <div className="login-form">  
+                  {/* email input */}
+                  <input type="text"
+                    value={this.state.email}
+                    onChange={this.handleChange('email')}
+                    className="login-input"
+                    placeholder="Email"
+                  />
+                  <br/>
+                  {/* password input */}
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.handleChange('password')}
+                    className="login-input"
+                    placeholder="Password"
+                  />
+                  <br/>
+                  {signUpZipcode}
+                  <br/>
+                  <input className="session-submit" type="submit" value={this.props.formType} />
+                </div>
+
+              </form>
+            </div>
+            {footer}
+            
           </div>
         
           <img className="signup-login-page-image" src={window.signupLoginPageImage} />

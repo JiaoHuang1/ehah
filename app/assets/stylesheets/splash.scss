@@ -1,24 +1,26 @@
 .splash {
-    width: 80%;
-    height: 800px;
+    height: 60vh;
     background-image: image-url('splash_background.jpg');
     background-size: cover;
-    padding: 20px 100px;
+    padding: 28px 160px;
 }
 
 .login-signup {
     display: flex;
     justify-content: flex-end;
+    height: 35px;
 }
 
 .header-group {
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
+    height: 35px;
 }
 
 .splash-logo {
     display: block;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -32,16 +34,16 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
-    padding: 5px 20px;
+    padding: 7px 20px;
     border-style: solid;
     border-width: 2px;
     border-color: white;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 .sign-up-button:hover {
     background-color: white;
-    color: darkgray;
+    color: #666;
 }
 
 .log-in-button {
@@ -50,8 +52,9 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
-    padding: 5px 8px;
+    padding: 7px 8px;
     margin: 0 12px;
+    align-items: center;
 }
 
 .log-in-button:hover {
@@ -65,9 +68,10 @@
     background-color: transparent;
     color: white;
     font-size: 12px;
-    border-radius: 5px;
-    border-width: 3px;
-    border-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid white;
 }
 
 .header-button:hover {
@@ -76,8 +80,8 @@
 }
 
 .header-name {
-    text-align: center;
-    vertical-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 
