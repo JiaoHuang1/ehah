@@ -7,7 +7,9 @@ import Root from './components/root';
 // import { fetchSingleBusiness } from './util/business_api_util';
 // import { fetchSingleBusiness } from './actions/business_action';
 // import { fetchAllCategories } from './util/category_api_util';
-import { fetchAllCategories } from './actions/category_action';
+// import { fetchAllCategories } from './actions/category_action';
+// import { fetchAllBusinesses } from './util/business_api_util';
+import { fetchAllBusinesses } from './actions/business_action';
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -28,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.store = store;
-  // window.fetchSingleBusiness = fetchSingleBusiness;
-  window.fetchAllCategories = fetchAllCategories;
+  window.fetchAllBusinesses = fetchAllBusinesses;
+  // window.fetchAllCategories = fetchAllCategories;
 
   ReactDOM.render(<Root store={store}/>, root);
 });

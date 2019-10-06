@@ -4,3 +4,10 @@ export const fetchSingleBusiness = (id) => {
         url: `/api/businesses/${id}`,
     });
 };
+
+export const fetchAllBusinesses = () => {
+    return $.ajax({
+        method: "GET",
+        url: '/api/businesses',
+    });
+};

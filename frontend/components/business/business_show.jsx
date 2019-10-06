@@ -51,7 +51,7 @@ class BusinessShow extends React.Component {
     let cityAndState;
     if (this.props.business.address !== undefined) {
       streetAddress = this.props.business.address.split(',')[0];
-      cityAndState = this.props.business.address.split(',').slice(1).join(" ");
+      cityAndState = this.props.business.address.split(',').slice(1).join(",");
     }
 
     let weekendtime =`${this.props.business.weekend_open_hour} - ${this.props.business.weekend_close_hour}`
@@ -67,14 +67,14 @@ class BusinessShow extends React.Component {
 
     let category_show;
     if (categories !== undefined) {
-      category_show = categories.map(category => 
-      {return (
-        <>
-          <a className="show-page-category-link" key={category.id} href="#">{category.category_name}</a>
-          <span>, </span>
-        </>
-      )}
-      )
+      category_show = categories.map(category => {
+        return (
+          <>
+            <a className="show-page-category-link" key={category.id} href="#">{category.category_name}</a>
+            <span>, </span>
+          </>
+        )
+      })
     }
 
 
