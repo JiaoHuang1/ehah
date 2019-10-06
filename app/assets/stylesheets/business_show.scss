@@ -37,9 +37,24 @@
     font-weight: bold;
 }
 
-.show-page-main-aside main p {
+.show-page-main-aside main p span {
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+    padding-right: 5px;
+}
+
+.show-page-main-aside main p span:nth-child(2) {
+    color: #999;
+}
+
+.show-page-main-aside main p span:last-child {
+    display: none;
+}
+
+.show-page-category-link {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0073BB;
 }
 
 .show-page-main-aside main h4 {
@@ -79,7 +94,7 @@
     padding-bottom: 50px;
 }
 
-.show-page-main-aside span {
+.show-page-main-aside ul span {
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;

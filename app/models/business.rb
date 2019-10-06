@@ -3,4 +3,5 @@ class Business < ApplicationRecord
     validates :name, uniqueness: { scope: [:latitude, :longitude] }
     
     has_many_attached :photos
+    # has_many :categories
 end

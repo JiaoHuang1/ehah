@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     # business start
     resources :businesses, only: [:show]
+    resources :categories, only: [:show, :index]
   end
 
 end

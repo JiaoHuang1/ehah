@@ -8,11 +8,17 @@ class BusinessShow extends React.Component {
   }
 
   componentDidMount() {
-    //   debugger
+
     this.props.fetchSingleBusiness(this.props.match.params.businessId);
+    this.props.fetchAllCategories();
+  
+    // this.props.business.category_id.map(id => this.props.fetchSingleCategory(id));
+
   }
 
+
   render() {
+    // debugger
     let photos;
     let firstfourphotos;
     let firstphoto;
@@ -53,6 +59,25 @@ class BusinessShow extends React.Component {
       weekendtime = this.props.business.weekend_open_hour;
     }
 
+    
+    let categories;
+    if (this.props.business.category_id !== undefined) {
+      categories = this.props.business.category_id.map(id => this.props.categories[id])
+    }
+
+    let category_show;
+    if (categories !== undefined) {
+      category_show = categories.map(category => 
+      {return (
+        <>
+          <a className="show-page-category-link" key={category.id} href="#">{category.category_name}</a>
+          <span>, </span>
+        </>
+      )}
+      )
+    }
+
+
     return (
       <>
         {firstfourphotos}
@@ -60,7 +85,11 @@ class BusinessShow extends React.Component {
         <div className="show-page-main-aside">
           <main>
             <h1>{this.props.business.name}</h1>
-            <p>{this.props.business.price_rating}</p>
+            <p>
+              <span>{this.props.business.price_rating}</span>
+              <span>.</span>
+              {category_show}
+            </p>
             <section></section>
             <h4>Location & Hours</h4>
             <div className="show-page-map-and-address">

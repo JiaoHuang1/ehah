@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_05_212426) do
+ActiveRecord::Schema.define(version: 2019_10_06_133305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 2019_10_05_212426) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "business_categories", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "business_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_id"], name: "index_business_categories_on_business_id"
+    t.index ["category_id", "business_id"], name: "index_business_categories_on_category_id_and_business_id", unique: true
+    t.index ["category_id"], name: "index_business_categories_on_category_id"
+  end
+
   create_table "businesses", force: :cascade do |t|
     t.string "name", null: false
     t.string "address", null: false
@@ -54,6 +64,13 @@ ActiveRecord::Schema.define(version: 2019_10_05_212426) do
     t.index ["latitude", "longitude"], name: "index_businesses_on_latitude_and_longitude"
     t.index ["name", "latitude", "longitude"], name: "index_businesses_on_name_and_latitude_and_longitude", unique: true
     t.index ["name"], name: "index_businesses_on_name"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_name"], name: "index_categories_on_category_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
