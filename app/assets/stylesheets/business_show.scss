@@ -1,0 +1,128 @@
+.show-page-top-image-group {
+    display: flex;
+    margin-right: 2px;
+}
+
+.show-page-top-image-group div {
+    width: 25%;
+    padding-left: 2px;
+    box-sizing: border-box;
+}
+
+.show-page-single-image {
+    width: 100%;
+    height: 100%;
+
+}
+
+.show-page-main-aside {
+    display: flex;
+    width: 950px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.show-page-main-aside main {
+    width: 66.66%;
+    padding-right: 50px;
+}
+
+.show-page-main-aside aside {
+    width: 33.33%;
+}
+
+.show-page-main-aside main h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.show-page-main-aside main p {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.show-page-main-aside main h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+
+.show-page-map-and-address {
+    display: flex;
+}
+
+.show-page-map-box {
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+    width: 60%;
+    padding-bottom: 15px;
+}
+
+.show-page-map-and-address .show-page-address {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.show-page-map-and-address .show-page-address p {
+    font-size: 12px;
+}
+
+
+.show-page-map-image {
+    width: 100%;
+    height: 80%;
+}
+
+.show-page-main-aside main ul {
+    width: 40%;
+    margin-left: 50px;
+    padding-bottom: 50px;
+}
+
+.show-page-main-aside span {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    width: 20%;
+}
+
+.show-page-main-aside li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.show-page-main-aside main section {
+    margin-top: 24px;
+    padding-top: 15px;
+    border-top: 1px solid #e6e6e6;
+}
+
+.show-page-sidebar-info-box {
+    width: 100%;
+    padding: 6px 6px 0px 6px;
+    margin-top: 30px;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.show-page-sidebar-info-box div {
+    display: flex;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 15px;
+}
+
+.show-page-sidebar-info-box div:last-child {
+    display: flex;
+    border-bottom: none;
+}
+
+.show-page-sidebar-info-box img{
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+
+
