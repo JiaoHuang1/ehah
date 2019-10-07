@@ -1,5 +1,7 @@
 import React from 'react';
 import BusinessIndexItem from './business_index_item';
+import NavBarSearch from '../nav_bar/nav_bar_search_container';
+import Footer from '../contact_footer/footer'
 
 class BusinessIndex extends React.Component {
     constructor(props) {
@@ -17,7 +19,7 @@ class BusinessIndex extends React.Component {
     render() {
         return(
             <>
-        
+                <NavBarSearch />
                 <div className="business-index-page-main-and-aside">
                     <ul>
         
@@ -34,6 +36,8 @@ class BusinessIndex extends React.Component {
 
                     <aside>google map</aside>
                 </div>
+
+                <Footer />
                
             </>
         )

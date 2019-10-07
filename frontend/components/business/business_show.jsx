@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import NavBarSearch from '../nav_bar/nav_bar_search_container';
+import Footer from '../contact_footer/footer';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -82,6 +84,7 @@ class BusinessShow extends React.Component {
 
     return (
       <>
+        <NavBarSearch />
         {firstfourphotos}
         {/* {photos} */}
         <div className="show-page-main-aside">
@@ -141,6 +144,8 @@ class BusinessShow extends React.Component {
           </aside>
         
       </div>
+
+      <Footer />
     </>
     );
   }
