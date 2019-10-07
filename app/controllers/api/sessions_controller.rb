@@ -13,7 +13,7 @@ class Api::SessionsController < ApplicationController
         @user = current_user
         if @user 
             logout!
-            render "api/users/show" ##after destroy should it still fetch the user info???
+            render "api/users/show"
         else 
             render json: ["Nobody signed in"], status: 404
         end

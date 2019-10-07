@@ -1,6 +1,5 @@
 class Api::SearchesController < ApplicationController
     def search_by_find
-        # debugger
         @businesses = Business.find_by_search_bar(params[:find], params[:loc])
         render "api/businesses/index"
 
