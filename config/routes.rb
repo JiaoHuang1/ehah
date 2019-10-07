@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     # business start
     resources :businesses, only: [:show, :index]
     resources :categories, only: [:show, :index]
+    get 'search', to: 'searches#search'
+    
   end
 
 end

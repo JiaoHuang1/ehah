@@ -13,8 +13,8 @@ export const receiveAllCategories = categories => ({
     categories,
 })
 
-export const fetchSingleCategory = id => dispatch => (
-    CategoryAPIUtil.fetchSingleCategory(id).then(category => dispatch(receiveSingleCategory(category)))
+export const fetchSingleCategory = category_name => dispatch => (
+    CategoryAPIUtil.fetchSingleCategory(category_name).then(category => dispatch(receiveSingleCategory(category)))
 )
 
 export const fetchAllCategories = () => dispatch => (

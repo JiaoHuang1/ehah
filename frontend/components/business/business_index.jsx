@@ -15,8 +15,6 @@ class BusinessIndex extends React.Component {
   
   
     render() {
-    
-
         return(
             <>
         
@@ -26,9 +24,7 @@ class BusinessIndex extends React.Component {
                         {this.props.businesses.map (
                             (business, idx) => {
                                 return (
-                                    <>
-                                        <BusinessIndexItem idx={idx + 1} business={business} categories={this.props.categories} key={business.id} />    
-                                    </>
+                                    <BusinessIndexItem idx={idx + 1} business={business} categories={this.props.categories} key={business.id} />    
                                 )
                             }
                             

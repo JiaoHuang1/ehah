@@ -9,7 +9,9 @@ import Root from './components/root';
 // import { fetchAllCategories } from './util/category_api_util';
 // import { fetchAllCategories } from './actions/category_action';
 // import { fetchAllBusinesses } from './util/business_api_util';
-import { fetchAllBusinesses } from './actions/business_action';
+// import { fetchAllBusinesses } from './actions/business_action';
+// import { fetchSingleCategory } from './util/category_api_util';
+import { fetchSingleCategory } from './actions/category_action';
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -30,8 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.store = store;
-  window.fetchAllBusinesses = fetchAllBusinesses;
+  // window.fetchAllBusinesses = fetchAllBusinesses;
   // window.fetchAllCategories = fetchAllCategories;
+  window.fetchSingleCategory = fetchSingleCategory;
 
   ReactDOM.render(<Root store={store}/>, root);
 });

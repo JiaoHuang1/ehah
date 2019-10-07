@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import { fetchAllBusinesses } from '../../actions/business_action';
 import { fetchAllCategories } from '../../actions/category_action';
-import BusinessIndex from './business_index';
+import BusinessSearchByCategoryIndex from './business_search_by_category_index';
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
   return {
-    businesses: Object.values(state.entities.businesses),
-    categories: state.entities.categories,
-    // category_name: ownProps.match.params.category_name,
+    businesses: state.entities.businesses,
+    categories: Object.values(state.entities.categories),
+    category_name: ownProps.match.params.category_name,
   };
 };
 
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BusinessIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(BusinessSearchByCategoryIndex);

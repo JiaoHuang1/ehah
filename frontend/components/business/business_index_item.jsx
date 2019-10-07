@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class BusinessIndexItem extends React.Component {
   constructor(props) {
@@ -34,18 +34,19 @@ class BusinessIndexItem extends React.Component {
     if (categories !== undefined) {
       category_show = categories.map(category => 
       {return (
-        <>
-          <a href="#" className="business-index-page-category" key={category.id}>{category.category_name}</a>
-          <span>, </span>
-        </>
+            <Link className="business-index-page-category" key={category.id} to={`/${category.category_name}`}>
+              {category.category_name} 
+              <span>, </span>
+            </Link>
       )}
       )
     }
+    // {/* <a href="#" className="business-index-page-category" key={category.id}>{category.category_name}</a> */}
 
 
     return (
         <li>
-            {firstphoto}
+            <div>{firstphoto}</div>
             <div className="business-index-page-main-without-img">
                 <div className="business-index-page-title-and-address">
                     <div className="business-index-page-business-info-section">
