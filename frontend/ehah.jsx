@@ -11,7 +11,9 @@ import Root from './components/root';
 // import { fetchAllBusinesses } from './util/business_api_util';
 // import { fetchAllBusinesses } from './actions/business_action';
 // import { fetchSingleCategory } from './util/category_api_util';
-import { fetchSingleCategory } from './actions/category_action';
+// import { fetchSingleCategory } from './actions/category_action';
+// import { fetchSearchBarBusiness, fetchSearchCategory } from './util/search_api_util';
+import { fetchSearchBarBusiness, fetchSearchCategory } from './actions/business_action';
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -34,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   // window.fetchAllBusinesses = fetchAllBusinesses;
   // window.fetchAllCategories = fetchAllCategories;
-  window.fetchSingleCategory = fetchSingleCategory;
+  // window.fetchSingleCategory = fetchSingleCategory;
+  window.fetchSearchBarBusiness = fetchSearchBarBusiness;
+  window.fetchSearchCategory = fetchSearchCategory;
 
   ReactDOM.render(<Root store={store}/>, root);
 });

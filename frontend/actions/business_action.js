@@ -1,5 +1,7 @@
 import * as BusinessAPIUtil from '../util/business_api_util';
 
+import * as SearchAPIUtil from '../util/search_api_util';
+
 export const RECEIVE_SINGLE_BUSINESS = 'RECEIVE_SINGLE_BUSINESS';
 export const RECEIVE_ALL_BUSINESSES = 'RECEIVE_ALL_BUSINESSES';
 
@@ -19,4 +21,14 @@ export const fetchSingleBusiness = id => dispatch => (
 
 export const fetchAllBusinesses = () => dispatch => (
     BusinessAPIUtil.fetchAllBusinesses().then(businesses => dispatch(receiveAllBusinesses(businesses)))
+)
+
+// search thunk action:
+
+export const fetchSearchBarBusiness = (find = "", loc = "") => dispatch => (
+    SearchAPIUtil.fetchSearchBarBusiness(find, loc).then(businesses => dispatch(receiveAllBusinesses(businesses)))
+)
+
+export const fetchSearchCategory = (category = "") => dispatch => (
+    SearchAPIUtil.fetchSearchCategory(category).then(businesses => dispatch(receiveAllBusinesses(businesses)))
 )
