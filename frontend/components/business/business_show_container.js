@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchSingleBusiness: (id) => dispatch(fetchSingleBusiness(id)),
     // fetchSingleCategory: (id) => dispatch(fetchSingleCategory(id)),
-    fetchAllCategories: () => dispatch(fetchAllCategories()),
+    // fetchAllCategories: () => dispatch(fetchAllCategories()),
   };
 };
 

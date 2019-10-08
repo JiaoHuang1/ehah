@@ -12,7 +12,7 @@ class BusinessShow extends React.Component {
   componentDidMount() {
 
     this.props.fetchSingleBusiness(this.props.match.params.businessId);
-    this.props.fetchAllCategories();
+    // this.props.fetchAllCategories();
   
     // this.props.business.category_id.map(id => this.props.fetchSingleCategory(id));
 
@@ -26,9 +26,9 @@ class BusinessShow extends React.Component {
 
 
   render() {
-    if (!this.props.business) {
-      return null;
-    }
+    // if (!this.props.business) {
+    //   return null;
+    // }
     // debugger
     let photos;
     let firstfourphotos;
@@ -71,17 +71,28 @@ class BusinessShow extends React.Component {
     }
 
     
-    let categories;
-    if (this.props.business.category_id !== undefined) {
-      categories = this.props.business.category_id.map(id => this.props.categories[id])
-    }
+    // let categories;
+    // if (this.props.business.category_id !== undefined) {
+    //   categories = this.props.business.category_id.map(id => this.props.categories[id])
+    // }
+
+    // let category_show;
+    // if (categories !== undefined) {
+    //   category_show = categories.map((category, idx) => {
+    //     return (
+    //       <Link className="show-page-category-link" key={idx} to={`/search/categories?category=${category.category_name}`}>
+    //           {category.category_name}
+    //       </Link>
+    //     )
+    //   })
+    // }
 
     let category_show;
-    if (categories !== undefined) {
-      category_show = categories.map((category, idx) => {
+    if (this.props.business.category_name !== undefined) {
+      category_show = this.props.business.category_name.map((category_name, idx) => {
         return (
-          <Link className="show-page-category-link" key={idx} to={`/search/categories?category=${category.category_name}`}>
-              {category.category_name}
+          <Link className="show-page-category-link" key={idx} to={`/search/categories?category=${category_name}`}>
+              {category_name}
           </Link>
         )
       })
