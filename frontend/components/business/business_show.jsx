@@ -18,7 +18,11 @@ class BusinessShow extends React.Component {
 
   }
 
-  //componentDidUpdate
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.businessId !== prevProps.match.params.businessId) {
+      this.props.fetchSingleBusiness(this.props.match.params.businessId);
+    }
+  }
 
 
   render() {
