@@ -28,11 +28,13 @@ burgerking3ave = Business.create!(
     phone: '(212) 228-2762'
 )
 
-burgerking1 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking1.jpg"), filename: "burger_king_1.jpg")
-burgerking2 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking2.jpg"), filename: "burger_king_2.jpg")
-burgerking3 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking3.jpg"), filename: "burger_king_3.jpg")
-burgerking4 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking4.jpg"), filename: "burger_king_4.jpg")
-burgerking5 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking5.jpg"), filename: "burger_king_5.jpg")
+# burgerking1 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking1.jpg"), filename: "burger_king_1.jpg")
+# burgerking2 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking2.jpg"), filename: "burger_king_2.jpg")
+# burgerking3 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking3.jpg"), filename: "burger_king_3.jpg")
+# burgerking4 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking4.jpg"), filename: "burger_king_4.jpg")
+# burgerking5 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking5.jpg"), filename: "burger_king_5.jpg")
+
+burgerking1 = burgerking3ave.photos.attach(io: File.open(Rails.root.join('Users', 'Jiao', 'Desktop', 'ehah_image_aws', 'burger_king', 'burgerking1.jpg')), filename: "burger_king_1.jpg")
 
 buds = Business.create!(
     name: 'Blooming Urban Design Scapes', 
@@ -56,11 +58,11 @@ buds = Business.create!(
     phone: '(212) 533-2962'
 )
 
-buds1 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds1.jpg"), filename: "buds1.jpg")
-buds2 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds2.jpg"), filename: "buds2.jpg")
-buds3 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds3.jpg"), filename: "buds3.jpg")
-buds4 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds4.jpg"), filename: "buds4.jpg")
-buds5 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds5.jpg"), filename: "buds5.jpg")
+# buds1 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds1.jpg"), filename: "buds1.jpg")
+# buds2 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds2.jpg"), filename: "buds2.jpg")
+# buds3 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds3.jpg"), filename: "buds3.jpg")
+# buds4 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds4.jpg"), filename: "buds4.jpg")
+# buds5 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds5.jpg"), filename: "buds5.jpg")
 
 # need to see the photo of business from here on
 
@@ -82,11 +84,11 @@ suger = Business.create!(
     phone: '(212) 234-2024'
 )
 
-suger1 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger1.jpg"), filename: "suger1.jpg")
-suger2 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger2.jpg"), filename: "suger2.jpg")
-suger3 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger3.jpg"), filename: "suger3.jpg")
-suger4 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger4.jpg"), filename: "suger4.jpg")
-suger5 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger5.jpg"), filename: "suger5.jpg")
+# suger1 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger1.jpg"), filename: "suger1.jpg")
+# suger2 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger2.jpg"), filename: "suger2.jpg")
+# suger3 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger3.jpg"), filename: "suger3.jpg")
+# suger4 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger4.jpg"), filename: "suger4.jpg")
+# suger5 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger5.jpg"), filename: "suger5.jpg")
 
 kingskitchen = Business.create!(
     name: 'King\'s Kitchen', 
@@ -106,11 +108,11 @@ kingskitchen = Business.create!(
     phone: '(212) 966-7288'
 )
 
-kingskitchen1 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen1.jpg"), filename: "kingskitchen1.jpg")
-kingskitchen2 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen2.jpg"), filename: "kingskitchen2.jpg")
-kingskitchen3 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen3.jpg"), filename: "kingskitchen3.jpg")
-kingskitchen4 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen4.jpg"), filename: "kingskitchen4.jpg")
-kingskitchen5 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen5.jpg"), filename: "kingskitchen5.jpg")
+# kingskitchen1 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen1.jpg"), filename: "kingskitchen1.jpg")
+# kingskitchen2 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen2.jpg"), filename: "kingskitchen2.jpg")
+# kingskitchen3 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen3.jpg"), filename: "kingskitchen3.jpg")
+# kingskitchen4 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen4.jpg"), filename: "kingskitchen4.jpg")
+# kingskitchen5 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen5.jpg"), filename: "kingskitchen5.jpg")
 
 szechuan = Business.create!(
     name: 'Szechuan Garden', 
@@ -132,11 +134,11 @@ szechuan = Business.create!(
     phone: '(212) 865-8808'
 )
 
-szechuan1 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan1.jpg"), filename: "szechuan1.jpg")
-szechuan2 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan2.jpg"), filename: "szechuan2.jpg")
-szechuan3 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan3.jpg"), filename: "szechuan3.jpg")
-szechuan4 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan4.jpg"), filename: "szechuan4.jpg")
-szechuan5 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan5.jpg"), filename: "szechuan5.jpg")
+# szechuan1 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan1.jpg"), filename: "szechuan1.jpg")
+# szechuan2 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan2.jpg"), filename: "szechuan2.jpg")
+# szechuan3 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan3.jpg"), filename: "szechuan3.jpg")
+# szechuan4 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan4.jpg"), filename: "szechuan4.jpg")
+# szechuan5 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan5.jpg"), filename: "szechuan5.jpg")
 
 bagelcofffee = Business.create!(
     name: 'Best Bagel & Coffee', 
@@ -154,11 +156,11 @@ bagelcofffee = Business.create!(
     phone: '(212) 564-4409'
 )
 
-bagelcofffee1 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee1.jpg"), filename: "bagelcofffee1.jpg")
-bagelcofffee2 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee2.jpg"), filename: "bagelcofffee2.jpg")
-bagelcofffee3 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee3.jpg"), filename: "bagelcofffee3.jpg")
-bagelcofffee4 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee4.jpg"), filename: "bagelcofffee4.jpg")
-bagelcofffee5 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee5.jpg"), filename: "bagelcofffee5.jpg")
+# bagelcofffee1 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee1.jpg"), filename: "bagelcofffee1.jpg")
+# bagelcofffee2 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee2.jpg"), filename: "bagelcofffee2.jpg")
+# bagelcofffee3 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee3.jpg"), filename: "bagelcofffee3.jpg")
+# bagelcofffee4 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee4.jpg"), filename: "bagelcofffee4.jpg")
+# bagelcofffee5 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee5.jpg"), filename: "bagelcofffee5.jpg")
 
 brener = Business.create!(
     name: 'Brener Construction', 
@@ -178,11 +180,11 @@ brener = Business.create!(
     phone: '(917) 825-6791'
 )
 
-brener1 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener1.jpg"), filename: "brener1.jpg")
-brener2 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener2.jpg"), filename: "brener2.jpg")
-brener3 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener3.jpg"), filename: "brener3.jpg")
-brener4 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener4.jpg"), filename: "brener4.jpg")
-brener5 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener5.jpg"), filename: "brener5.jpg")
+# brener1 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener1.jpg"), filename: "brener1.jpg")
+# brener2 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener2.jpg"), filename: "brener2.jpg")
+# brener3 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener3.jpg"), filename: "brener3.jpg")
+# brener4 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener4.jpg"), filename: "brener4.jpg")
+# brener5 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener5.jpg"), filename: "brener5.jpg")
 
 prestige = Business.create!(
     name: 'Prestige Automotive', 
@@ -200,11 +202,11 @@ prestige = Business.create!(
     phone: '(347) 966-7771'
 )
 
-prestige1 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige1.jpg"), filename: "prestige1.jpg")
-prestige2 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige2.jpg"), filename: "prestige2.jpg")
-prestige3 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige3.jpg"), filename: "prestige3.jpg")
-prestige4 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige4.jpg"), filename: "prestige4.jpg")
-prestige5 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige5.jpg"), filename: "prestige5.jpg")
+# prestige1 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige1.jpg"), filename: "prestige1.jpg")
+# prestige2 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige2.jpg"), filename: "prestige2.jpg")
+# prestige3 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige3.jpg"), filename: "prestige3.jpg")
+# prestige4 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige4.jpg"), filename: "prestige4.jpg")
+# prestige5 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige5.jpg"), filename: "prestige5.jpg")
 
 autobody = Business.create!(
     name: 'Don Joe Auto Body', 
@@ -224,11 +226,11 @@ autobody = Business.create!(
     phone: '(347) 966-7771'
 )
 
-autobody1 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody1.jpg"), filename: "autobody1.jpg")
-autobody2 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody2.jpg"), filename: "autobody2.jpg")
-autobody3 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody3.jpg"), filename: "autobody3.jpg")
-autobody4 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody4.jpg"), filename: "autobody4.jpg")
-autobody5 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody5.jpg"), filename: "autobody5.jpg")
+# autobody1 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody1.jpg"), filename: "autobody1.jpg")
+# autobody2 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody2.jpg"), filename: "autobody2.jpg")
+# autobody3 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody3.jpg"), filename: "autobody3.jpg")
+# autobody4 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody4.jpg"), filename: "autobody4.jpg")
+# autobody5 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody5.jpg"), filename: "autobody5.jpg")
 
 frederick = Business.create!(
     name: 'The Frederick Hotel', 
@@ -246,11 +248,11 @@ frederick = Business.create!(
     phone: '(212) 566-1900'
 )
 
-frederick1 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick1.jpg"), filename: "frederick1.jpg")
-frederick2 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick2.jpg"), filename: "frederick2.jpg")
-frederick3 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick3.jpg"), filename: "frederick3.jpg")
-frederick4 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick4.jpg"), filename: "frederick4.jpg")
-frederick5 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick5.jpg"), filename: "frederick5.jpg")
+# frederick1 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick1.jpg"), filename: "frederick1.jpg")
+# frederick2 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick2.jpg"), filename: "frederick2.jpg")
+# frederick3 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick3.jpg"), filename: "frederick3.jpg")
+# frederick4 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick4.jpg"), filename: "frederick4.jpg")
+# frederick5 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick5.jpg"), filename: "frederick5.jpg")
 
 beacon = Business.create!(
     name: 'Hotel Beacon', 
@@ -267,11 +269,11 @@ beacon = Business.create!(
     phone: '(929) 341-1197'
 )
 
-beacon1 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon1.jpg"), filename: "beacon1.jpg")
-beacon2 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon2.jpg"), filename: "beacon2.jpg")
-beacon3 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon3.jpg"), filename: "beacon3.jpg")
-beacon4 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon4.jpg"), filename: "beacon4.jpg")
-beacon5 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon5.jpg"), filename: "beacon5.jpg")
+# beacon1 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon1.jpg"), filename: "beacon1.jpg")
+# beacon2 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon2.jpg"), filename: "beacon2.jpg")
+# beacon3 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon3.jpg"), filename: "beacon3.jpg")
+# beacon4 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon4.jpg"), filename: "beacon4.jpg")
+# beacon5 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon5.jpg"), filename: "beacon5.jpg")
 
 
 ## create category table
