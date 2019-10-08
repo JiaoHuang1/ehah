@@ -17,6 +17,14 @@ class SearchBySearchBar extends React.Component {
         this.props.fetchAllCategories();
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.location.search !== prevProps.location.search) {
+            const values = queryString.parse(this.props.location.search);
+            const category = values.category;
+            this.props.fetchSearchCategory(category)
+        }
+    }
+
 
     render() {
         let businessItem;
