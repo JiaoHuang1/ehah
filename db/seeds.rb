@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.destroy_all
 Business.destroy_all
 Category.destroy_all
@@ -33,8 +35,8 @@ burgerking3ave = Business.create!(
 # burgerking3 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking3.jpg"), filename: "burger_king_3.jpg")
 # burgerking4 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking4.jpg"), filename: "burger_king_4.jpg")
 # burgerking5 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking5.jpg"), filename: "burger_king_5.jpg")
-
-burgerking1 = burgerking3ave.photos.attach(io: File.open(Rails.root.join('Users', 'Jiao', 'Desktop', 'ehah_image_aws', 'burger_king', 'burgerking1.jpg')), filename: "burger_king_1.jpg")
+file1 = open('https://ehah-seed.s3.amazonaws.com/burgerking1.jpg')
+burgerking1 = burgerking3ave.photos.attach(io: file1, filename: "burger_king_1.jpg")
 
 buds = Business.create!(
     name: 'Blooming Urban Design Scapes', 
