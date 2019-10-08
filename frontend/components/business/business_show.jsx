@@ -1,7 +1,7 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-import NavBarSearch from '../nav_bar/nav_bar_search_container';
+import NavBarSearch from '../nav_bar/nav_bar_search';
 import Footer from '../contact_footer/footer';
+import { Link } from 'react-router-dom';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -71,12 +71,11 @@ class BusinessShow extends React.Component {
 
     let category_show;
     if (categories !== undefined) {
-      category_show = categories.map(category => {
+      category_show = categories.map((category, idx) => {
         return (
-          <>
-            <a className="show-page-category-link" key={category.id} href="#">{category.category_name}</a>
-            <span>, </span>
-          </>
+          <Link className="show-page-category-link" key={idx} to={`/search/categories?category=${category.category_name}`}>
+              {category.category_name}
+          </Link>
         )
       })
     }

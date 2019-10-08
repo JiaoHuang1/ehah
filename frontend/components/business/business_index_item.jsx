@@ -32,11 +32,10 @@ class BusinessIndexItem extends React.Component {
 
     let category_show;
     if (categories !== undefined) {
-      category_show = categories.map(category => 
+      category_show = categories.map((category, idx) => 
       {return (
-            <Link className="business-index-page-category" key={category.id} to={`/${category.category_name}`}>
-              {category.category_name} 
-              <span>, </span>
+            <Link className="business-index-page-category" key={idx} to={`/search/categories?category=${category.category_name}`}>
+              {category.category_name}
             </Link>
       )}
       )

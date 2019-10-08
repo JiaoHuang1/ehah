@@ -1,26 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-const SearchForm = () => (
-    <>
-        <Link to="/">
-            <img className="signup-login-page-logo" src={window.splashLogoURL} />
-        </Link>
-        <form className="search-bar-search-form">
-                <div className="search-bar-label-input">
+class SearchForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { find: "", loc: "" }
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(field) {
+        return e => this.setState({ [field]: e.target.value });
+    }
+
+    render() {
+        return (
+            <form onSubmit={() => this.props.history.push(`/search/businesses?find=${this.state.find}&loc=${this.state.loc}`)} className="search-bar-search-form">
+                <span className="search-bar-label-input">
                     <label>Find</label>
-                    <input type="text" placeholder="Restaurants"/>
-                </div>
-
-                <div className="search-bar-label-input">
+                    <input value={this.state.find} onChange={this.handleChange('find')} type="text" placeholder="Restaurants"/>
+                </span>
+                <span className="search-bar-label-input">
                     <label>Near</label>
-                    <input type="text" placeholder="New York, NY"/>
-                </div>
+                    <input value={this.state.loc} onChange={this.handleChange('loc')} type="text" placeholder="New York, NY"/>
+                </span>
+                <button><img className="search-bar-search-img" className="" src={window.searchIcon} /></button>
+            </form>
+        )
+    }
+ 
+}
 
-            <button><img className="search-bar-search-img" className="" src={window.searchIcon} /></button>
-
-        </form>
-    </>
-)
-
-export default SearchForm;
+export default withRouter(SearchForm);
