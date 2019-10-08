@@ -26,6 +26,9 @@ class BusinessShow extends React.Component {
 
 
   render() {
+    if (!this.props.business) {
+      return null;
+    }
     // debugger
     let photos;
     let firstfourphotos;
