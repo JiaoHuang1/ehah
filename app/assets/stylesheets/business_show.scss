@@ -1,11 +1,15 @@
 .show-page-top-image-group {
-    margin-top: 2px;
     display: flex;
-    margin-right: 2px;
+    min-width: 1000px;
+    margin: auto;
+    min-width: 1000px;
+    padding-top: 2px;
+    padding-right: 2px;
 }
 
 .show-page-top-image-group div {
     width: 25%;
+    height: 250px;
     padding-left: 2px;
     box-sizing: border-box;
 }
