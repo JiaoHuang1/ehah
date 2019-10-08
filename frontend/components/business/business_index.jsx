@@ -14,7 +14,6 @@ class BusinessIndex extends React.Component {
       this.props.fetchAllCategories();
     }
   
-  
     render() {
         let businessItem;
         {if (this.props.businesses !== undefined) {

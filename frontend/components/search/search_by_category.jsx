@@ -13,8 +13,16 @@ class SearchBySearchBar extends React.Component {
         const values = queryString.parse(this.props.location.search);
         const category = values.category;
     
-        this.props.fetchSearchCategory(category)
+        this.props.fetchSearchCategory(category);
         this.props.fetchAllCategories();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.search !== prevProps.location.search) {
+            const values = queryString.parse(this.props.location.search);
+            const category = values.category;
+            this.props.fetchSearchCategory(category)
+        }
     }
 
 
