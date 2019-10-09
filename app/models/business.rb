@@ -20,4 +20,6 @@ class Business < ApplicationRecord
         businesses = Business.joins(:categories).where("category_name LIKE ?", "%#{category_name}%").uniq
     end
 
+    has_many :comments
+
 end

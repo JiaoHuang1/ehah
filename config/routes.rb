@@ -5,7 +5,12 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     # business start
-    resources :businesses, only: [:show, :index]
+    resources :businesses, only: [:show, :index] do
+      resources :comments, only: [:create]
+    end
+
+    resources :comments, only: [:update, :destroy]
+
     resources :categories, only: [:show, :index]
     get 'search/businesses', to: 'searches#search_by_find'
     get 'search/categories', to: 'searches#search_by_category'
