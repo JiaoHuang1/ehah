@@ -35,8 +35,16 @@ burgerking3ave = Business.create!(
 # burgerking3 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking3.jpg"), filename: "burger_king_3.jpg")
 # burgerking4 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking4.jpg"), filename: "burger_king_4.jpg")
 # burgerking5 = burgerking3ave.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/burger_king/burgerking5.jpg"), filename: "burger_king_5.jpg")
-file1 = open('https://ehah-seed.s3.amazonaws.com/burgerking1.jpg')
-burgerking1 = burgerking3ave.photos.attach(io: file1, filename: "burger_king_1.jpg")
+bkfile1 = open('https://ehah-seed.s3.amazonaws.com/burgerking1.jpg')
+burgerking1 = burgerking3ave.photos.attach(io: bkfile1, filename: "burger_king_1.jpg")
+bkfile2 = open('https://ehah-seed.s3.amazonaws.com/burgerking2.jpg')
+burgerking2 = burgerking3ave.photos.attach(io: bkfile2, filename: "burger_king_2.jpg")
+bkfile3 = open('https://ehah-seed.s3.amazonaws.com/burgerking3.jpg')
+burgerking3 = burgerking3ave.photos.attach(io: bkfile3, filename: "burger_king_3.jpg")
+bkfile4 = open('https://ehah-seed.s3.amazonaws.com/burgerking4.jpg')
+burgerking4 = burgerking3ave.photos.attach(io: bkfile4, filename: "burger_king_4.jpg")
+bkfile5 = open('https://ehah-seed.s3.amazonaws.com/burgerking5.jpg')
+burgerking5 = burgerking3ave.photos.attach(io: bkfile5, filename: "burger_king_5.jpg")
 
 buds = Business.create!(
     name: 'Blooming Urban Design Scapes', 
@@ -65,8 +73,17 @@ buds = Business.create!(
 # buds3 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds3.jpg"), filename: "buds3.jpg")
 # buds4 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds4.jpg"), filename: "buds4.jpg")
 # buds5 = buds.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/buds/buds5.jpg"), filename: "buds5.jpg")
+budsfile1 = open('https://ehah-seed.s3.amazonaws.com/buds1.jpg')
+buds1 = buds.photos.attach(io: budsfile1, filename: "buds1.jpg")
+budsfile2 = open('https://ehah-seed.s3.amazonaws.com/buds2.jpg')
+buds2 = buds.photos.attach(io: budsfile2, filename: "buds2.jpg")
+budsfile3 = open('https://ehah-seed.s3.amazonaws.com/buds3.jpg')
+buds3 = buds.photos.attach(io: budsfile3, filename: "buds3.jpg")
+budsfile4 = open('https://ehah-seed.s3.amazonaws.com/buds4.jpg')
+buds4 = buds.photos.attach(io: budsfile4, filename: "buds4.jpg")
+budsfile5 = open('https://ehah-seed.s3.amazonaws.com/buds5.jpg')
+buds5 = buds.photos.attach(io: budsfile5, filename: "buds5.jpg")
 
-# need to see the photo of business from here on
 
 suger = Business.create!(
     name: 'Suger Hill Cafe', 
@@ -91,6 +108,18 @@ suger = Business.create!(
 # suger3 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger3.jpg"), filename: "suger3.jpg")
 # suger4 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger4.jpg"), filename: "suger4.jpg")
 # suger5 = suger.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/suger/suger5.jpg"), filename: "suger5.jpg")
+sugerfile1 = open('https://ehah-seed.s3.amazonaws.com/suger1.jpg')
+suger1 = suger.photos.attach(io: sugerfile1, filename: "suger1.jpg")
+sugerfile2 = open('https://ehah-seed.s3.amazonaws.com/suger2.jpg')
+suger2 = suger.photos.attach(io: sugerfile2, filename: "suger2.jpg")
+sugerfile3 = open('https://ehah-seed.s3.amazonaws.com/suger3.jpg')
+suger3 = suger.photos.attach(io: sugerfile3, filename: "suger3.jpg")
+sugerfile4 = open('https://ehah-seed.s3.amazonaws.com/suger4.jpg')
+suger4 = suger.photos.attach(io: sugerfile4, filename: "suger4.jpg")
+sugerfile5 = open('https://ehah-seed.s3.amazonaws.com/suger5.jpg')
+suger5 = suger.photos.attach(io: sugerfile5, filename: "suger5.jpg")
+
+
 
 kingskitchen = Business.create!(
     name: 'King\'s Kitchen', 
@@ -110,11 +139,23 @@ kingskitchen = Business.create!(
     phone: '(212) 966-7288'
 )
 
+
 # kingskitchen1 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen1.jpg"), filename: "kingskitchen1.jpg")
 # kingskitchen2 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen2.jpg"), filename: "kingskitchen2.jpg")
 # kingskitchen3 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen3.jpg"), filename: "kingskitchen3.jpg")
 # kingskitchen4 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen4.jpg"), filename: "kingskitchen4.jpg")
 # kingskitchen5 = kingskitchen.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/kingskitchen/kingskitchen5.jpg"), filename: "kingskitchen5.jpg")
+kingskitchenfile1 = open('https://ehah-seed.s3.amazonaws.com/kingskitchen1.jpg')
+kingskitchen1 = kingskitchen.photos.attach(io: kingskitchenfile1, filename: "kingskitchen1.jpg")
+kingskitchenfile2 = open('https://ehah-seed.s3.amazonaws.com/kingskitchen2.jpg')
+kingskitchen2 = kingskitchen.photos.attach(io: kingskitchenfile2, filename: "kingskitchen2.jpg")
+kingskitchenfile3 = open('https://ehah-seed.s3.amazonaws.com/kingskitchen3.jpg')
+kingskitchen3 = kingskitchen.photos.attach(io: kingskitchenfile3, filename: "kingskitchen3.jpg")
+kingskitchenfile4 = open('https://ehah-seed.s3.amazonaws.com/kingskitchen4.jpg')
+kingskitchen4 = kingskitchen.photos.attach(io: kingskitchenfile4, filename: "kingskitchen4.jpg")
+kingskitchenfile5 = open('https://ehah-seed.s3.amazonaws.com/kingskitchen5.jpg')
+kingskitchen5 = kingskitchen.photos.attach(io: kingskitchenfile5, filename: "kingskitchen5.jpg")
+
 
 szechuan = Business.create!(
     name: 'Szechuan Garden', 
@@ -142,6 +183,17 @@ szechuan = Business.create!(
 # szechuan4 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan4.jpg"), filename: "szechuan4.jpg")
 # szechuan5 = szechuan.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/szechuan/szechuan5.jpg"), filename: "szechuan5.jpg")
 
+szechuanfile1 = open('https://ehah-seed.s3.amazonaws.com/szechuan1.jpg')
+szechuan1 = szechuan.photos.attach(io: szechuanfile1, filename: "szechuan1.jpg")
+szechuanfile2 = open('https://ehah-seed.s3.amazonaws.com/szechuan2.jpg')
+szechuan2 = szechuan.photos.attach(io: szechuanfile2, filename: "szechuan2.jpg")
+szechuanfile3 = open('https://ehah-seed.s3.amazonaws.com/szechuan3.jpg')
+szechuan3 = szechuan.photos.attach(io: szechuanfile3, filename: "szechuan3.jpg")
+szechuanfile4 = open('https://ehah-seed.s3.amazonaws.com/szechuan4.jpg')
+szechuan4 = szechuan.photos.attach(io: szechuanfile4, filename: "szechuan4.jpg")
+szechuanfile5 = open('https://ehah-seed.s3.amazonaws.com/szechuan5.jpg')
+szechuan5 = szechuan.photos.attach(io: szechuanfile5, filename: "szechuan5.jpg")
+
 bagelcofffee = Business.create!(
     name: 'Best Bagel & Coffee', 
     address: '225 W 35th St, New York, NY 10001', 
@@ -163,6 +215,17 @@ bagelcofffee = Business.create!(
 # bagelcofffee3 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee3.jpg"), filename: "bagelcofffee3.jpg")
 # bagelcofffee4 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee4.jpg"), filename: "bagelcofffee4.jpg")
 # bagelcofffee5 = bagelcofffee.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/bagelcofffee/bagelcofffee5.jpg"), filename: "bagelcofffee5.jpg")
+bagelcofffeefile1 = open('https://ehah-seed.s3.amazonaws.com/bagelcofffee1.jpg')
+bagelcofffee1 = bagelcofffee.photos.attach(io: bagelcofffeefile1, filename: "bagelcofffee1.jpg")
+bagelcofffeefile2 = open('https://ehah-seed.s3.amazonaws.com/bagelcofffee2.jpg')
+bagelcofffee2 = bagelcofffee.photos.attach(io: bagelcofffeefile2, filename: "bagelcofffee2.jpg")
+bagelcofffeefile3 = open('https://ehah-seed.s3.amazonaws.com/bagelcofffee3.jpg')
+bagelcofffee3 = bagelcofffee.photos.attach(io: bagelcofffeefile3, filename: "bagelcofffee3.jpg")
+bagelcofffeefile4 = open('https://ehah-seed.s3.amazonaws.com/bagelcofffee4.jpg')
+bagelcofffee4 = bagelcofffee.photos.attach(io: bagelcofffeefile4, filename: "bagelcofffee4.jpg")
+bagelcofffeefile5 = open('https://ehah-seed.s3.amazonaws.com/bagelcofffee5.jpg')
+bagelcofffee5 = bagelcofffee.photos.attach(io: bagelcofffeefile5, filename: "bagelcofffee5.jpg")
+
 
 brener = Business.create!(
     name: 'Brener Construction', 
@@ -187,6 +250,17 @@ brener = Business.create!(
 # brener3 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener3.jpg"), filename: "brener3.jpg")
 # brener4 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener4.jpg"), filename: "brener4.jpg")
 # brener5 = brener.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/brener/brener5.jpg"), filename: "brener5.jpg")
+brenerfile1 = open('https://ehah-seed.s3.amazonaws.com/brener1.jpg')
+brener1 = brener.photos.attach(io: brenerfile1, filename: "brener1.jpg")
+brenerfile2 = open('https://ehah-seed.s3.amazonaws.com/brener2.jpg')
+brener2 = brener.photos.attach(io: brenerfile2, filename: "brener2.jpg")
+brenerfile3 = open('https://ehah-seed.s3.amazonaws.com/brener3.jpg')
+brener3 = brener.photos.attach(io: brenerfile3, filename: "brener3.jpg")
+brenerfile4 = open('https://ehah-seed.s3.amazonaws.com/brener4.jpg')
+brener4 = brener.photos.attach(io: brenerfile4, filename: "brener4.jpg")
+brenerfile5 = open('https://ehah-seed.s3.amazonaws.com/brener5.jpg')
+brener5 = brener.photos.attach(io: brenerfile5, filename: "brener5.jpg")
+
 
 prestige = Business.create!(
     name: 'Prestige Automotive', 
@@ -209,6 +283,17 @@ prestige = Business.create!(
 # prestige3 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige3.jpg"), filename: "prestige3.jpg")
 # prestige4 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige4.jpg"), filename: "prestige4.jpg")
 # prestige5 = prestige.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/prestige/prestige5.jpg"), filename: "prestige5.jpg")
+prestigefile1 = open('https://ehah-seed.s3.amazonaws.com/prestige1.jpg')
+prestige1 = prestige.photos.attach(io: prestigefile1, filename: "prestige1.jpg")
+prestigefile2 = open('https://ehah-seed.s3.amazonaws.com/prestige2.jpg')
+prestige2 = prestige.photos.attach(io: prestigefile2, filename: "prestige2.jpg")
+prestigefile3 = open('https://ehah-seed.s3.amazonaws.com/prestige3.jpg')
+prestige3 = prestige.photos.attach(io: prestigefile3, filename: "prestige3.jpg")
+prestigefile4 = open('https://ehah-seed.s3.amazonaws.com/prestige4.jpg')
+prestige4 = prestige.photos.attach(io: prestigefile4, filename: "prestige4.jpg")
+prestigefile5 = open('https://ehah-seed.s3.amazonaws.com/prestige5.jpg')
+prestige5 = prestige.photos.attach(io: prestigefile5, filename: "prestige5.jpg")
+
 
 autobody = Business.create!(
     name: 'Don Joe Auto Body', 
@@ -233,6 +318,16 @@ autobody = Business.create!(
 # autobody3 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody3.jpg"), filename: "autobody3.jpg")
 # autobody4 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody4.jpg"), filename: "autobody4.jpg")
 # autobody5 = autobody.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/autobody/autobody5.jpg"), filename: "autobody5.jpg")
+autobodyfile1 = open('https://ehah-seed.s3.amazonaws.com/autobody1.jpg')
+autobody1 = autobody.photos.attach(io: autobodyfile1, filename: "autobody1.jpg")
+autobodyfile2 = open('https://ehah-seed.s3.amazonaws.com/autobody2.jpg')
+autobody2 = autobody.photos.attach(io: autobodyfile2, filename: "autobody2.jpg")
+autobodyfile3 = open('https://ehah-seed.s3.amazonaws.com/autobody3.jpg')
+autobody3 = autobody.photos.attach(io: autobodyfile3, filename: "autobody3.jpg")
+autobodyfile4 = open('https://ehah-seed.s3.amazonaws.com/autobody4.jpg')
+autobody4 = autobody.photos.attach(io: autobodyfile4, filename: "autobody4.jpg")
+autobodyfile5 = open('https://ehah-seed.s3.amazonaws.com/autobody5.jpg')
+autobody5 = autobody.photos.attach(io: autobodyfile5, filename: "autobody5.jpg")
 
 frederick = Business.create!(
     name: 'The Frederick Hotel', 
@@ -255,6 +350,17 @@ frederick = Business.create!(
 # frederick3 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick3.jpg"), filename: "frederick3.jpg")
 # frederick4 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick4.jpg"), filename: "frederick4.jpg")
 # frederick5 = frederick.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/frederick/frederick5.jpg"), filename: "frederick5.jpg")
+frederickfile1 = open('https://ehah-seed.s3.amazonaws.com/frederick1.jpg')
+frederick1 = frederick.photos.attach(io: frederickfile1, filename: "frederick1.jpg")
+frederickfile2 = open('https://ehah-seed.s3.amazonaws.com/frederick2.jpg')
+frederick2 = frederick.photos.attach(io: frederickfile2, filename: "frederick2.jpg")
+frederickfile3 = open('https://ehah-seed.s3.amazonaws.com/frederick3.jpg')
+frederick3 = frederick.photos.attach(io: frederickfile3, filename: "frederick3.jpg")
+frederickfile4 = open('https://ehah-seed.s3.amazonaws.com/frederick4.jpg')
+frederick4 = frederick.photos.attach(io: frederickfile4, filename: "frederick4.jpg")
+frederickfile5 = open('https://ehah-seed.s3.amazonaws.com/frederick5.jpg')
+frederick5 = frederick.photos.attach(io: frederickfile5, filename: "frederick5.jpg")
+
 
 beacon = Business.create!(
     name: 'Hotel Beacon', 
@@ -276,7 +382,16 @@ beacon = Business.create!(
 # beacon3 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon3.jpg"), filename: "beacon3.jpg")
 # beacon4 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon4.jpg"), filename: "beacon4.jpg")
 # beacon5 = beacon.photos.attach(io: File.open("/Users/Jiao/Desktop/ehah_image_aws/beacon/beacon5.jpg"), filename: "beacon5.jpg")
-
+beaconfile1 = open('https://ehah-seed.s3.amazonaws.com/beacon1.jpg')
+beacon1 = beacon.photos.attach(io: beaconfile1, filename: "beacon1.jpg")
+beaconfile2 = open('https://ehah-seed.s3.amazonaws.com/beacon2.jpg')
+beacon2 = beacon.photos.attach(io: beaconfile2, filename: "beacon2.jpg")
+beaconfile3 = open('https://ehah-seed.s3.amazonaws.com/beacon3.jpg')
+beacon3 = beacon.photos.attach(io: beaconfile3, filename: "beacon3.jpg")
+beaconfile4 = open('https://ehah-seed.s3.amazonaws.com/beacon4.jpg')
+beacon4 = beacon.photos.attach(io: beaconfile4, filename: "beacon4.jpg")
+beaconfile5 = open('https://ehah-seed.s3.amazonaws.com/beacon5.jpg')
+beacon5 = beacon.photos.attach(io: beaconfile5, filename: "beacon5.jpg")
 
 ## create category table
 
