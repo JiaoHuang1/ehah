@@ -21,6 +21,7 @@ const App = () => (
     <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
     <Route exact path="/search/businesses" component={SearchBySearchBarContainer} />
     <Route exact path="/search/categories" component={SearchByCategoryContainer} />
+    {/* <Route exact path="/businesses/:businessId/editreview" component={updateCommentContainer} /> */}
     
   </div>
 );

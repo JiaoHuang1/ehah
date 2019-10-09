@@ -1,0 +1,118 @@
+.comment-index-main {
+    display: flex;
+    justify-content: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.comment-index-names {
+    color: #2b73bb;
+    font-weight: bold;
+    width: 25%;
+    padding-top: 5px;
+}
+
+.comment-index-comment-box-main {
+    width: 75%;  
+}
+
+.comment-index-time {
+    color:#666666;
+    padding-left: 5px;
+}
+
+.comment-index-comment-box-main > div {
+    padding-bottom: 10px;
+}
+
+.link-and-button {
+    margin: 20px 5px 0 0;
+    padding: 3px 8px;
+    border: 1px solid #666666;
+    border-radius: 3px;
+}
+
+
+.one-star {
+    color: orange;
+    font-size: 15px;
+}
+
+.one-star:first-child:before {
+    content: "\2605";
+    position: absolute;
+}
+
+.one-star {
+    color: #f2bd79;
+}
+
+.two-star {
+    color: #f6c03e;
+    font-size: 15px;
+}
+
+.two-star:first-child:before {
+    content: "\2605";
+    position: absolute;
+}
+
+.two-star:nth-child(2):before {
+    content: "\2605";
+    position: absolute;
+}
+
+.three-star {
+    color: #f0903f;
+    font-size: 15px;
+}
+
+.three-star:first-child:before {
+    content: "\2605";
+    position: absolute;
+}
+
+.three-star:nth-child(2):before {
+    content: "\2605";
+    position: absolute;
+}
+
+.three-star:nth-child(3):before {
+    content: "\2605";
+    position: absolute;
+}
+
+.four-star {
+    color: #eb5b4e;
+    font-size: 15px;
+}
+
+.four-star:first-child:before {
+    content: "\2605";
+    position: absolute;
+}
+
+.four-star:nth-child(2):before {
+    content: "\2605";
+    position: absolute;
+}
+
+.four-star:nth-child(3):before {
+    content: "\2605";
+    position: absolute;
+}
+
+.four-star:nth-child(4):before {
+    content: "\2605";
+    position: absolute;
+}
+
+.five-star {
+    color: #d43a27;
+    font-size: 15px;
+}
+
+.five-star:before {
+    content: "\2605";
+    position: absolute;
+}

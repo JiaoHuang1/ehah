@@ -13,7 +13,10 @@ import Root from './components/root';
 // import { fetchSingleCategory } from './util/category_api_util';
 // import { fetchSingleCategory } from './actions/category_action';
 // import { fetchSearchBarBusiness, fetchSearchCategory } from './util/search_api_util';
-import { fetchSearchBarBusiness, fetchSearchCategory } from './actions/business_action';
+// import { fetchSearchBarBusiness, fetchSearchCategory } from './actions/business_action';
+// import { createComment, updateComment, deleteComment } from './util/comment_api_util';
+import { updateComment } from './actions/ui_action';
+import { create } from 'domain';
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -37,8 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.fetchAllBusinesses = fetchAllBusinesses;
   // window.fetchAllCategories = fetchAllCategories;
   // window.fetchSingleCategory = fetchSingleCategory;
-  window.fetchSearchBarBusiness = fetchSearchBarBusiness;
-  window.fetchSearchCategory = fetchSearchCategory;
+  // window.fetchSearchBarBusiness = fetchSearchBarBusiness;
+  // window.fetchSearchCategory = fetchSearchCategory;
+  // window.createComment = createComment;
+  window.updateComment = updateComment;
+  // window.deleteComment = deleteComment;
 
   ReactDOM.render(<Root store={store}/>, root);
 });

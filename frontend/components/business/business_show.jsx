@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import NavBarSearch from '../nav_bar/nav_bar_search';
 import CategoryNavBar from '../nav_bar/category_nav_bar';
+import CommentIndexItem from '../comment/comment_index_item';
 import Footer from '../contact_footer/footer';
-import { Link } from 'react-router-dom';
+
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -77,6 +79,13 @@ class BusinessShow extends React.Component {
       })
     }
 
+    let comments;
+    if (this.props.business.comments !== undefined) {
+      comments = this.props.business.comments.map(comment => {
+        return <CommentIndexItem key={comment.id} comment={comment} users={this.props.business.users} currentUserId={this.props.currentUserId} businessId={this.props.business.id} />
+      })
+    }
+
 
     return (
       <>
@@ -92,6 +101,8 @@ class BusinessShow extends React.Component {
               <span>.</span>
               {category_show}
             </p>
+
+
             <section></section>
             <h4>Location & Hours</h4>
             <div className="show-page-map-and-address">
@@ -114,10 +125,18 @@ class BusinessShow extends React.Component {
 
               </ul>
             </div>
+
+
             <section></section>
             <h4>About the Business</h4>
             <p>{this.props.business.description}</p>
+
+
             <section></section>
+            <div>
+              <h4>Check out the reviews</h4>
+              {comments}
+            </div>
           </main>
 
           <aside>
@@ -139,8 +158,11 @@ class BusinessShow extends React.Component {
               </div>
             </ul>
           </aside>
+
+
         
       </div>
+
 
       <Footer />
     </>
