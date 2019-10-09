@@ -17,11 +17,6 @@ class BusinessIndexItem extends React.Component {
     let firstphoto;
     firstphoto = <img onClick={this.handleRedirect} className='business-index-page-item-img' src={this.props.business.photoUrls[0]}/>
 
-    let categories;
-    if (this.props.business.category_id !== undefined) {
-      categories = this.props.business.category_id.map(id => this.props.categories[id])
-    }
-
     let streetAddress;
     let cityAndState;
     if (this.props.business.address !== undefined) {
@@ -31,16 +26,16 @@ class BusinessIndexItem extends React.Component {
 
 
     let category_show;
-    if (categories !== undefined) {
-      category_show = categories.map((category, idx) => 
-      {return (
-            <Link className="business-index-page-category" key={idx} to={`/search/categories?category=${category.category_name}`}>
-              {category.category_name}
-            </Link>
-      )}
-      )
+    if (this.props.business.category_name !== undefined) {
+      category_show = this.props.business.category_name.map((category_name, idx) => {
+        return (
+          <Link className="business-index-page-category" key={idx} to={`/search/categories?category=${category_name}`}>
+              {category_name}
+          </Link>
+        )
+      })
     }
-    // {/* <a href="#" className="business-index-page-category" key={category.id}>{category.category_name}</a> */}
+   
 
 
     return (

@@ -6,16 +6,10 @@ import { Link } from 'react-router-dom';
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
   }
 
   componentDidMount() {
-
     this.props.fetchSingleBusiness(this.props.match.params.businessId);
-    // this.props.fetchAllCategories();
-  
-    // this.props.business.category_id.map(id => this.props.fetchSingleCategory(id));
-
   }
 
   componentDidUpdate(prevProps) {
@@ -70,22 +64,6 @@ class BusinessShow extends React.Component {
       weekendtime = this.props.business.weekend_open_hour;
     }
 
-    
-    // let categories;
-    // if (this.props.business.category_id !== undefined) {
-    //   categories = this.props.business.category_id.map(id => this.props.categories[id])
-    // }
-
-    // let category_show;
-    // if (categories !== undefined) {
-    //   category_show = categories.map((category, idx) => {
-    //     return (
-    //       <Link className="show-page-category-link" key={idx} to={`/search/categories?category=${category.category_name}`}>
-    //           {category.category_name}
-    //       </Link>
-    //     )
-    //   })
-    // }
 
     let category_show;
     if (this.props.business.category_name !== undefined) {
