@@ -84,4 +84,23 @@
     color: white;
 }
 
+.splash-page-category-section .splash-page-category-link .splash-page-category-img {
+    width: 300px;
+    height: 250px;
+    padding: 20px;
+}
 
+.splash-page-category-section {
+    margin: 100px 100px 0 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.splash-page-category-link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2b73bb;
+    font-weight: bold;
+}

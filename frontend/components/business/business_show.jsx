@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarSearch from '../nav_bar/nav_bar_search';
+import CategoryNavBar from '../nav_bar/category_nav_bar';
 import Footer from '../contact_footer/footer';
 import { Link } from 'react-router-dom';
 
@@ -80,6 +81,7 @@ class BusinessShow extends React.Component {
     return (
       <>
         <NavBarSearch />
+        <CategoryNavBar />
         {firstfourphotos}
         {/* {photos} */}
         <div className="show-page-main-aside">
