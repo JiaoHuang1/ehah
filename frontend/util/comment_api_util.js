@@ -22,3 +22,10 @@ export const deleteComment = (id) => {
         url: `/api/comments/${id}`,
     });
 };
+
+export const fetchSingleComment = (id) => {
+    return $.ajax({
+        method: "GET",
+        url: `/api/comments/${id}`
+    })
+}

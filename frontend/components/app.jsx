@@ -6,6 +6,8 @@ import BusinessShowContainer from './business/business_show_container';
 import BusinessIndexContainer from './business/business_index_container';
 import SearchBySearchBarContainer from './search/search_by_search_bar_container';
 import SearchByCategoryContainer from './search/search_by_category_container';
+import updateCommentContainer from './comment/update_comment_container';
+import createCommentContainer from './comment/create_comment_container';
 // import BusinessSearchByCategoryContainer from './business/business_search_by_category_container';
 import Contact from './contact_footer/contact';
 import splash from './splash/splash';
@@ -21,7 +23,8 @@ const App = () => (
     <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
     <Route exact path="/search/businesses" component={SearchBySearchBarContainer} />
     <Route exact path="/search/categories" component={SearchByCategoryContainer} />
-    {/* <Route exact path="/businesses/:businessId/editreview" component={updateCommentContainer} /> */}
+    <Route exact path="/comments/:commentId" component={updateCommentContainer} />
+    <Route exact path="/businesses/:businessId/newcomment" component={createCommentContainer} />
     
   </div>
 );

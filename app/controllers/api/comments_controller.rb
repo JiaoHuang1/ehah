@@ -1,4 +1,9 @@
 class Api::CommentsController < ApplicationController
+    def show
+        @comment = Comment.find(params[:id])
+        render :show
+    end
+
     def create
         # debugger
         @comment = Comment.new(comment_params)
@@ -23,7 +28,9 @@ class Api::CommentsController < ApplicationController
 
     def destroy
         @comment = current_user.comments.find(params[:id])
-        if !@comment.destroy
+        if @comment.destroy
+            render 'api/comments/show'
+        else
             render json: @comment.errors.full_messages, status: 422
         end
     end

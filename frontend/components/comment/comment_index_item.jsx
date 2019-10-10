@@ -1,29 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CommentIndexItem = ({comment: {rating, body, user_id, updated_at}, users, currentUserId, businessId} ) => {
+const CommentIndexItem = ({comment: {id, rating, body, user_id, updated_at}, users, currentUserId, businessId, deleteComment} ) => {
     let editAndDelete;
     if (user_id === currentUserId) {
         editAndDelete = (
             <div>
-                <Link className="link-and-button" to={`/businesses/${businessId}/editreview`}>Edit</Link>
-                <button className="link-and-button">Delete</button>
+                <Link className="link-and-button" to={`/comments/${id}`}>Edit</Link>
+                <button className="link-and-button" onClick={() => deleteComment(id)}>Delete</button>
             </div>
         )
     }
 
 
-    let commentIndexRatingClassName;
+    let commentIndexRating;
     if (rating <= 1) {
-        commentIndexRatingClassName = "one-star";
+        commentIndexRating = "one-star";
     } else if (rating <= 2) {
-        commentIndexRatingClassName = "two-star";
+        commentIndexRating = "two-star";
     } else if (rating <= 3) {
-        commentIndexRatingClassName = "three-star";
+        commentIndexRating = "three-star";
     } else if (rating <= 4) {
-        commentIndexRatingClassName = "four-star";
+        commentIndexRating = "four-star";
     } else {
-        commentIndexRatingClassName = "five-star";
+        commentIndexRating = "five-star";
     }
     
 
@@ -34,11 +34,11 @@ const CommentIndexItem = ({comment: {rating, body, user_id, updated_at}, users, 
             <p className="comment-index-names">{users[user_id].first_name} {users[user_id].last_name}</p>
             <div className="comment-index-comment-box-main">
                 <div className="comment-index-star-role">
-                    <span className={commentIndexRatingClassName}>☆</span>
-                    <span className={commentIndexRatingClassName}>☆</span>
-                    <span className={commentIndexRatingClassName}>☆</span>
-                    <span className={commentIndexRatingClassName}>☆</span>
-                    <span className={commentIndexRatingClassName}>☆</span>
+                    <span className={commentIndexRating}>☆</span>
+                    <span className={commentIndexRating}>☆</span>
+                    <span className={commentIndexRating}>☆</span>
+                    <span className={commentIndexRating}>☆</span>
+                    <span className={commentIndexRating}>☆</span>
                     <span className="comment-index-time">{updated_at.split("T")[0]}</span>
                 </div>
                 

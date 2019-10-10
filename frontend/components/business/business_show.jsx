@@ -80,11 +80,28 @@ class BusinessShow extends React.Component {
     }
 
     let comments;
+    let sum_rating = 0;
+    let showPageAvgReview = 0;
     if (this.props.business.comments !== undefined) {
       comments = this.props.business.comments.map(comment => {
-        return <CommentIndexItem key={comment.id} comment={comment} users={this.props.business.users} currentUserId={this.props.currentUserId} businessId={this.props.business.id} />
+        sum_rating += comment.rating;
+        return <CommentIndexItem key={comment.id} comment={comment} users={this.props.business.users} currentUserId={this.props.currentUserId} businessId={this.props.business.id} deleteComment={this.props.deleteComment}/>
       })
+
+      if (sum_rating / this.props.business.comments.length <= 1) {
+        showPageAvgReview = "one-star"
+      } else if (sum_rating / this.props.business.comments.length <= 2) {
+        showPageAvgReview = "two-star"
+      } else if (sum_rating / this.props.business.comments.length <= 3) {
+        showPageAvgReview = "three-star"
+      } else if (sum_rating / this.props.business.comments.length <= 4) {
+        showPageAvgReview = "four-star"
+      } else {
+        showPageAvgReview = "five-star"
+      }
     }
+
+    
 
 
     return (
@@ -96,6 +113,14 @@ class BusinessShow extends React.Component {
         <div className="show-page-main-aside">
           <main>
             <h1>{this.props.business.name}</h1>
+            <div>
+              <span className={showPageAvgReview}>☆</span>
+              <span className={showPageAvgReview}>☆</span>
+              <span className={showPageAvgReview}>☆</span>
+              <span className={showPageAvgReview}>☆</span>
+              <span className={showPageAvgReview}>☆</span>
+            </div>
+            <Link className="business-show-page-write-review-button" to={`/businesses/${this.props.match.params.businessId}/newcomment`}><span>☆</span><span>Write a Review</span></Link>
             <p>
               <span>{this.props.business.price_rating}</span>
               <span>.</span>

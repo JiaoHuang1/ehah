@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:create]
     end
 
-    resources :comments, only: [:update, :destroy]
+    resources :comments, only: [:show, :create, :update, :destroy]
 
     resources :categories, only: [:show, :index]
     get 'search/businesses', to: 'searches#search_by_find'

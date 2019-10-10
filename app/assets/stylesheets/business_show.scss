@@ -40,6 +40,11 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.show-page-main-aside main p {
+    margin-top: 10px;
 }
 
 .show-page-main-aside main p span {
@@ -145,5 +150,21 @@
     margin-right: 20px;
 }
 
+.business-show-page-write-review-button span {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
 
+.business-show-page-write-review-button {
+    border: 1px solid red;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 10px;
+}
 
+.business-show-page-write-review-button span:first-child::before {
+    content: "\2605";
+    position: absolute;
+}

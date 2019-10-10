@@ -1,0 +1,37 @@
+.update-comment-form-main {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 100px;
+}
+
+#update-comment-form-business-name-title {
+    color: #2b73bb;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.textarea {
+    border: 1px solid black;
+    width: 400px;
+    height: 300px;
+    text-align: start;
+}
+
+.update-comment-form-box {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.update-comment-form-box > ul > li {
+    display: inline;
+    color: red;
+    cursor: pointer;
+}
+
+
+
+// .one-star {
+//     display: inline;
+// }
+
+

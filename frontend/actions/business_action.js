@@ -1,6 +1,6 @@
 import * as BusinessAPIUtil from '../util/business_api_util';
 import * as SearchAPIUtil from '../util/search_api_util';
-// import * as CommentAPIUtil from '../util/comment_api_util';
+import * as CommentAPIUtil from '../util/comment_api_util';
 
 export const RECEIVE_SINGLE_BUSINESS = 'RECEIVE_SINGLE_BUSINESS';
 export const RECEIVE_ALL_BUSINESSES = 'RECEIVE_ALL_BUSINESSES';
@@ -33,8 +33,6 @@ export const fetchSearchCategory = (category = "") => dispatch => (
     SearchAPIUtil.fetchSearchCategory(category).then(businesses => dispatch(receiveAllBusinesses(businesses)))
 )
 
-// comment only have thunk action since it doesn't need to be in a seperate slice of state:
-
-export const updateComment = (id, comment) => dispatch => (
-    CommentAPIUtil.updateComment(id, comment).then(() => dispatch)
+export const deleteComment = (id) => dispatch => (
+    CommentAPIUtil.deleteComment(id).then((comment) => dispatch(fetchSingleBusiness(comment.business.id)))
 )

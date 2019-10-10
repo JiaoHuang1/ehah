@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchSingleBusiness } from '../../actions/business_action';
+import { fetchSingleBusiness, deleteComment } from '../../actions/business_action';
 import { fetchAllCategories } from '../../actions/category_action';
 import BusinessShow from './business_show';
 
@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    deleteComment: (id) => dispatch(deleteComment(id)),
     fetchSingleBusiness: (id) => dispatch(fetchSingleBusiness(id)),
   };
 };
