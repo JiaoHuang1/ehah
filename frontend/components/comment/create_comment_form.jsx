@@ -16,7 +16,6 @@ class CreateCommentForm extends React.Component {
   }
 
   
-
   handleCommentBodyChange(e) {
     //   debugger
     this.setState({ body: e.target.value })
@@ -25,7 +24,32 @@ class CreateCommentForm extends React.Component {
   handleClickStar(e) {
     //   debugger
     this.setState({ rating: e.target.value })
-    }
+
+    if (e.target.value === 1) {
+      document.getElementsByName("star").forEach(ele => {
+        return ele.className = "one-star";
+      })
+    } else if (e.target.value === 2) {
+      document.getElementsByName("star").forEach(ele => {
+        return ele.className = "two-star";
+      })
+    } else if (e.target.value === 3) {
+      document.getElementsByName("star").forEach(ele => {
+        return ele.className = "three-star";
+      })
+    } else if (e.target.value === 4) {
+      document.getElementsByName("star").forEach(ele => {
+        return ele.className = "four-star";
+      })
+    } else if (e.target.value === 5) {
+      document.getElementsByName("star").forEach(ele => {
+        return ele.className = "five-star";
+      })
+    } 
+
+
+
+  }
 
   handleSubmit(e) {
     //     // debugger
@@ -54,11 +78,11 @@ class CreateCommentForm extends React.Component {
                 <Link id="update-comment-form-business-name-title" to={`/businesses/${this.props.match.params.businessId}`}>{this.props.business.name}</Link>
                 <form className="update-comment-form-box" onSubmit={this.handleSubmit}>
                     <ul>
-                        <li className="two-star" onClick={this.handleClickStar} value="1">☆</li>
-                        <li className="two-star" onClick={this.handleClickStar} value="2">☆</li>
-                        <li className="two-star" onClick={this.handleClickStar} value="3">☆</li>
-                        <li className="two-star" onClick={this.handleClickStar} value="4">☆</li>
-                        <li className="two-star" onClick={this.handleClickStar} value="5">☆</li>
+                        <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="1">☆</li>
+                        <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="2">☆</li>
+                        <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="3">☆</li>
+                        <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="4">☆</li>
+                        <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="5">☆</li>
                     </ul>
 
                     <input type="text" className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} />

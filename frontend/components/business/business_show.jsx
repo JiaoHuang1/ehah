@@ -22,8 +22,7 @@ class BusinessShow extends React.Component {
   }
 
   initMap() {
-    // debugger
-    // console.log(this.props.business.latitude)
+
     let uluru = { lat: this.props.business.latitude, lng: this.props.business.longitude };
     let map = new google.maps.Map(
       document.getElementById('map'), { zoom: 15, center: uluru }
