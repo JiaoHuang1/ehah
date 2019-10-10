@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavBarSearch from '../nav_bar/nav_bar_search';
+import NavBarSearchContainer from '../nav_bar/nav_bar_search_container';
 import CategoryNavBar from '../nav_bar/category_nav_bar';
 import CommentIndexItem from '../comment/comment_index_item';
 import Footer from '../contact_footer/footer';
@@ -106,7 +106,7 @@ class BusinessShow extends React.Component {
 
     return (
       <>
-        <NavBarSearch />
+        <NavBarSearchContainer />
         <CategoryNavBar />
         {firstfourphotos}
         {/* {photos} */}
@@ -119,8 +119,9 @@ class BusinessShow extends React.Component {
               <span className={showPageAvgReview}>☆</span>
               <span className={showPageAvgReview}>☆</span>
               <span className={showPageAvgReview}>☆</span>
-            </div>
+            
             <Link className="business-show-page-write-review-button" to={`/businesses/${this.props.match.params.businessId}/newcomment`}><span>☆</span><span>Write a Review</span></Link>
+            </div>
             <p>
               <span>{this.props.business.price_rating}</span>
               <span>.</span>

@@ -1,6 +1,6 @@
 import React from 'react';
-import CommentForm from './comment_form';
 import { Link } from 'react-router-dom';
+import NavBarEditCommentFormContainer from '../nav_bar/nav_bar_edit_comment_form_container';
 
 class UpdateCommentForm extends React.Component {
   constructor(props) {
@@ -25,14 +25,14 @@ class UpdateCommentForm extends React.Component {
   handleClickStar(e) {
     //   debugger
     this.setState({ rating: e.target.value })
-    let className = li.getAttribute("class");
-    li.className = "five-star";
+ 
   }
 
   handleSubmit(e) {
         // debugger
       e.preventDefault();
       this.props.updateComment(this.props.match.params.commentId, this.state);
+      this.setState = ({ body: "", rating: null});
   }
 
 
@@ -53,31 +53,34 @@ class UpdateCommentForm extends React.Component {
     let redirectMessage;
     if (this.props.updateButton === "Updated!") {
         redirectMessage =  (
-        <Link id="" to={`/businesses/${this.props.comment.business.id}`}>
-            <span>Go back to</span>
+        <Link id="redirect-message" to={`/businesses/${this.props.comment.business.id}`}>
+            <span className="redirect-message">Go back to</span>
             <span>{this.props.comment.business.name}</span>
         </Link>
         )
     }
     
     return (
-   
+
+      <div>
+        <NavBarEditCommentFormContainer />
         <div className="update-comment-form-main">
             <Link id="update-comment-form-business-name-title" to={`/businesses/${this.props.comment.business.id}`}>{this.props.comment.business.name}</Link>
             <form className="update-comment-form-box" onSubmit={this.handleSubmit}>
                 <ul>
-                    <li className="two-star" onClick={this.handleClickStar} value="1">☆</li>
-                    <li className="two-star" onClick={this.handleClickStar} value="2">☆</li>
-                    <li className="two-star" onClick={this.handleClickStar} value="3">☆</li>
-                    <li className="two-star" onClick={this.handleClickStar} value="4">☆</li>
-                    <li className="two-star" onClick={this.handleClickStar} value="5">☆</li>
+                    <li className="" onClick={this.handleClickStar} value="1">☆</li>
+                    <li className="" onClick={this.handleClickStar} value="2">☆</li>
+                    <li className="" onClick={this.handleClickStar} value="3">☆</li>
+                    <li className="" onClick={this.handleClickStar} value="4">☆</li>
+                    <li className="" onClick={this.handleClickStar} value="5">☆</li>
                 </ul>
 
                 <input type="text" className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} />
-                <input type="submit" onSubmit={this.handleSubmit} value={this.props.updateButton}/>
+                <input className="submit-button" type="submit" onSubmit={this.handleSubmit} value={this.props.updateButton}/>
             </form>
             {redirectMessage}
         </div>
+      </div>
     );
   }
 }

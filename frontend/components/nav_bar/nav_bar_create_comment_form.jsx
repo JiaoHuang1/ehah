@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchForm from './search_form';
+// import SearchForm from './search_form';
 
-class NavBarSearch extends React.Component {
+class NavBarCreateCommentForm extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -32,7 +32,7 @@ class NavBarSearch extends React.Component {
             <Link to="/">
               <img className="signup-login-page-logo" src={window.splashLogoURL} />
             </Link>
-            <div className="navbar-search-form-wrapper"><SearchForm /></div>
+            <p id="edit-form-nav-bar-title">Create Your Review</p>
             { sessionLinks }
           </div>
         )
@@ -41,4 +41,4 @@ class NavBarSearch extends React.Component {
 }
 
 
-export default NavBarSearch
+export default NavBarCreateCommentForm

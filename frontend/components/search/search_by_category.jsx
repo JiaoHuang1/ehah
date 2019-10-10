@@ -1,7 +1,7 @@
 import React from 'react';
 import queryString from 'query-string';
 import BusinessIndexItem from '../business/business_index_item';
-import NavBarSearch from '../nav_bar/nav_bar_search';
+import NavBarSearchContainer from '../nav_bar/nav_bar_search_container';
 import CategoryNavBar from '../nav_bar/category_nav_bar';
 import Footer from '../contact_footer/footer';
 
@@ -33,7 +33,7 @@ class SearchBySearchBar extends React.Component {
 
         return(
             <>
-                <NavBarSearch />
+                <NavBarSearchContainer />
                 <CategoryNavBar />
                 <div className="business-index-page-main-and-aside">
                     <ul>

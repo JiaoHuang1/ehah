@@ -1,7 +1,10 @@
 .update-comment-form-main {
     font-family: Arial, Helvetica, sans-serif;
-    margin-left: 100px;
+    text-align: center;
+    padding: 30px;
+    margin: 30px;
 }
+
 
 #update-comment-form-business-name-title {
     color: #2b73bb;
@@ -10,15 +13,23 @@
 }
 
 .textarea {
-    border: 1px solid black;
-    width: 400px;
-    height: 300px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    max-width: 800px;
+    max-height: 600px;
+    min-width: 400px;
+    min-height: 300px;
+    width: 60%;
+    height: 60vh;
+    margin: 20px;
     text-align: start;
 }
 
 .update-comment-form-box {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -26,12 +37,30 @@
     display: inline;
     color: red;
     cursor: pointer;
+    font-size: 25px;
+    padding: 0 5px;
 }
 
+.update-comment-form-box > ul {
+    padding: 20px;
+}
 
+.submit-button {
+    background-color: red;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
+.navbar-search-main p {
+    color: white;
+    font-weight: bold;
+}
 // .one-star {
 //     display: inline;
 // }
 
-
+.update-comment-form-main > .redirect-message > span {
+    color:blue;
+}
