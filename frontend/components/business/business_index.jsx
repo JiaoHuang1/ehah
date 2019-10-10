@@ -12,7 +12,17 @@ class BusinessIndex extends React.Component {
     }
   
     componentDidMount() {
-      this.props.fetchAllBusinesses();
+      this.props.fetchAllBusinesses().then(() => this.initMap());
+    }
+
+    initMap() {
+        let firstMarker = { lat: this.props.businesses[0].latitude, lng: this.props.businesses[0].longitude };
+        let map = new google.maps.Map(
+            document.getElementById('map'), { zoom: 11, center: firstMarker }
+        );
+        let markers = this.props.businesses.map( business => {
+            return new google.maps.Marker({ position: { lat: business.latitude, lng: business.longitude }, map: map });
+        })
     }
   
     render() {
@@ -30,8 +40,7 @@ class BusinessIndex extends React.Component {
                         {businessItem}
     
                     </ul>
-
-                    <aside>google map</aside>
+                    <div id="map"></div>
                 </div>
 
                 <Footer />

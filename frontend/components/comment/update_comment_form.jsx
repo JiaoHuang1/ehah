@@ -68,11 +68,11 @@ class UpdateCommentForm extends React.Component {
             <Link id="update-comment-form-business-name-title" to={`/businesses/${this.props.comment.business.id}`}>{this.props.comment.business.name}</Link>
             <form className="update-comment-form-box" onSubmit={this.handleSubmit}>
                 <ul>
-                    <li className="" onClick={this.handleClickStar} value="1">☆</li>
-                    <li className="" onClick={this.handleClickStar} value="2">☆</li>
-                    <li className="" onClick={this.handleClickStar} value="3">☆</li>
-                    <li className="" onClick={this.handleClickStar} value="4">☆</li>
-                    <li className="" onClick={this.handleClickStar} value="5">☆</li>
+                    <li className="one-star" onClick={this.handleClickStar} value="1">☆</li>
+                    <li className="one-star" onClick={this.handleClickStar} value="2">☆</li>
+                    <li className="one-star" onClick={this.handleClickStar} value="3">☆</li>
+                    <li className="one-star" onClick={this.handleClickStar} value="4">☆</li>
+                    <li className="one-star" onClick={this.handleClickStar} value="5">☆</li>
                 </ul>
 
                 <input type="text" className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} />

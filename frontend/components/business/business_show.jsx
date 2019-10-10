@@ -12,13 +12,24 @@ class BusinessShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchSingleBusiness(this.props.match.params.businessId);
+    this.props.fetchSingleBusiness(this.props.match.params.businessId).then(() => this.initMap()); 
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.businessId !== prevProps.match.params.businessId) {
       this.props.fetchSingleBusiness(this.props.match.params.businessId);
     }
+  }
+
+  initMap() {
+    // debugger
+    // console.log(this.props.business.latitude)
+    let uluru = { lat: this.props.business.latitude, lng: this.props.business.longitude };
+    let map = new google.maps.Map(
+      document.getElementById('map'), { zoom: 15, center: uluru }
+    );
+
+    let marker = new google.maps.Marker({ position: uluru, map: map });
   }
 
 
@@ -131,9 +142,16 @@ class BusinessShow extends React.Component {
 
             <section></section>
             <h4>Location & Hours</h4>
+      
             <div className="show-page-map-and-address">
               <div className="show-page-map-box">
-                <p className="show-page-map-image">for google map</p>
+                {/* <p className="show-page-map-image">for google map</p> */}
+
+                
+                <div id="map"></div>
+                
+
+
                 <div className="show-page-address">
                   <p>{streetAddress}</p>
                   <p>{cityAndState}</p>
