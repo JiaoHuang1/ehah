@@ -8,7 +8,6 @@ import Footer from '../contact_footer/footer';
 class BusinessIndex extends React.Component {
     constructor(props) {
       super(props);
-      // debugger
     }
   
     componentDidMount() {

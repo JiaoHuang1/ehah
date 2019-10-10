@@ -14,7 +14,7 @@ class SearchBySearchBar extends React.Component {
         const values = queryString.parse(this.props.location.search);
         const find = values.find;
         const loc = values.loc;
-        this.props.fetchSearchBarBusiness(find, loc)
+        this.props.fetchSearchBarBusiness(find, loc).then(() => this.initMap());
     }
 
     componentDidUpdate(prevProps) {
@@ -24,6 +24,16 @@ class SearchBySearchBar extends React.Component {
             const loc = values.loc;
             this.props.fetchSearchBarBusiness(find, loc)
         }
+    }
+
+    initMap() {
+        let firstMarker = { lat: this.props.businesses[0].latitude, lng: this.props.businesses[0].longitude };
+        let map = new google.maps.Map(
+            document.getElementById('map'), { zoom: 11, center: firstMarker }
+        );
+        let markers = this.props.businesses.map( business => {
+            return new google.maps.Marker({ position: { lat: business.latitude, lng: business.longitude }, map: map });
+        })
     }
 
 
@@ -42,7 +52,7 @@ class SearchBySearchBar extends React.Component {
                         {businessItem}
                     </ul>
 
-                    <aside>google map</aside>
+                    <div id="map"></div>
                 </div>
 
                 <Footer />
