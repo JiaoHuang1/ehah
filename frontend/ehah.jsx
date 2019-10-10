@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
+
   window.store = store;
   // window.fetchAllBusinesses = fetchAllBusinesses;
   // window.fetchAllCategories = fetchAllCategories;

@@ -15,6 +15,8 @@ class CreateCommentForm extends React.Component {
       this.props.fetchSingleBusiness(this.props.match.params.businessId)
   }
 
+  
+
   handleCommentBodyChange(e) {
     //   debugger
     this.setState({ body: e.target.value })
