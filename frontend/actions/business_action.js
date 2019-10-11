@@ -5,9 +5,12 @@ import * as CommentAPIUtil from '../util/comment_api_util';
 export const RECEIVE_SINGLE_BUSINESS = 'RECEIVE_SINGLE_BUSINESS';
 export const RECEIVE_ALL_BUSINESSES = 'RECEIVE_ALL_BUSINESSES';
 
-export const receiveSingleBusiness = business => ({
+export const receiveSingleBusiness = ({business, comments, categories, users}) => ({
     type: RECEIVE_SINGLE_BUSINESS,
     business,
+    comments, 
+    categories, 
+    users
 })
 
 export const receiveAllBusinesses = businesses => ({
@@ -16,7 +19,7 @@ export const receiveAllBusinesses = businesses => ({
 })
 
 export const fetchSingleBusiness = id => dispatch => (
-    BusinessAPIUtil.fetchSingleBusiness(id).then(business => dispatch(receiveSingleBusiness(business)))
+    BusinessAPIUtil.fetchSingleBusiness(id).then(payload => dispatch(receiveSingleBusiness(payload)))
 )
 
 export const fetchAllBusinesses = () => dispatch => (

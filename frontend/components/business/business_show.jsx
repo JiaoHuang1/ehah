@@ -4,6 +4,7 @@ import NavBarSearchContainer from '../nav_bar/nav_bar_search_container';
 import CategoryNavBar from '../nav_bar/category_nav_bar';
 import CommentIndexItem from '../comment/comment_index_item';
 import Footer from '../contact_footer/footer';
+import { cpus } from 'os';
 
 
 class BusinessShow extends React.Component {
@@ -12,13 +13,14 @@ class BusinessShow extends React.Component {
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchSingleBusiness(this.props.match.params.businessId).then(() => this.initMap()); 
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.businessId !== prevProps.match.params.businessId) {
+   
       this.props.fetchSingleBusiness(this.props.match.params.businessId);
-    }
+
   }
 
   initMap() {
@@ -33,18 +35,19 @@ class BusinessShow extends React.Component {
 
 
   render() {
-    // if (!this.props.business) {
-    //   return null;
-    // }
     // debugger
-    let photos;
+    if (!this.props.business) {
+      return null;
+    }
+    // debugger
+    // let photos;
     let firstfourphotos;
-    let firstphoto;
-    if (this.props.business.photoUrls !== undefined) {
-      firstphoto = <img className="show-page-side-image" src={this.props.business.photoUrls[0]}/>
+    // let firstphoto;
+    // if (this.props.business.photoUrls !== undefined) {
+      const firstphoto = <img className="show-page-side-image" src={this.props.business.photoUrls[0]}/>
 
       if (this.props.business.photoUrls.length >= 4) {
-        firstfourphotos = (
+      firstfourphotos = (
           <div className="show-page-top-image-group">
             <div>
             <img className="show-page-single-image" src={this.props.business.photoUrls[0]}/>
@@ -62,15 +65,16 @@ class BusinessShow extends React.Component {
         )
       }
 
-      photos = this.props.business.photoUrls.map((photo, idx) => <img className="show-page-single-image" key={idx} src={photo}/>);
-    } 
-
-    let streetAddress;
-    let cityAndState;
-    if (this.props.business.address !== undefined) {
-      streetAddress = this.props.business.address.split(',')[0];
-      cityAndState = this.props.business.address.split(',').slice(1).join(",");
-    }
+    const photos = this.props.business.photoUrls.map((photo, idx) => <img className="show-page-single-image" key={idx} src={photo}/>);
+    // } 
+    
+    // let streetAddress;
+    // let cityAndState;
+    // debugger
+    // if (this.props.business.address !== undefined) {
+    const streetAddress = this.props.business.address.split(',')[0];
+    const cityAndState = this.props.business.address.split(',').slice(1).join(",");
+    // }
 
     let weekendtime =`${this.props.business.weekend_open_hour} - ${this.props.business.weekend_close_hour}`
     if (this.props.business.weekend_open_hour === "closed") {
@@ -78,48 +82,57 @@ class BusinessShow extends React.Component {
     }
 
 
-    let category_show;
-    if (this.props.business.category_name !== undefined) {
-      category_show = this.props.business.category_name.map((category_name, idx) => {
-        return (
-          <Link className="show-page-category-link" key={idx} to={`/search/categories?category=${category_name}`}>
-              {category_name}
-          </Link>
-        )
-      })
-    }
+    const category_show = this.props.categories.map(category => {
+      return (
+        <Link className="show-page-category-link" key={category.id} to={`/search/categories?category=${category.category_name}`}>
+            {category.category_name}
+        </Link>
+      )
+    })
 
-    let comments;
+    
     let sum_rating = 0;
     let showPageAvgReview = 0;
-    if (this.props.business.comments !== undefined) {
-      comments = this.props.business.comments.map(comment => {
-        sum_rating += comment.rating;
-        return <CommentIndexItem key={comment.id} comment={comment} users={this.props.business.users} currentUserId={this.props.currentUserId} businessId={this.props.business.id} deleteComment={this.props.deleteComment}/>
-      })
+    // let comments_show;
+    let users = this.props.users;
+    let currentUserId = this.props.currentUserId;
+    // let businessId = this.props.business.id;
+    let deleteComment = this.props.deleteComment;
+    // debugger
+    const comments_show = this.props.comments.map(comment => {
+      sum_rating += comment.rating;
+      // debugger
+      return <CommentIndexItem key={comment.id} comment={comment} users={users} currentUserId={currentUserId} deleteComment={deleteComment}/>
+    })
+    // // if (this.props.business.comments !== undefined) {
+      
+    //   comments = this.props.comments.map(comment_id => {
+    //     let comment = comments[comment_id];
+    //     sum_rating += comment.rating;
+    //     return <CommentIndexItem key={comment.id} comment={comment} users={this.props.business.users} currentUserId={this.props.currentUserId} businessId={this.props.business.id} deleteComment={this.props.deleteComment}/>
+    //   })
 
-      if (sum_rating / this.props.business.comments.length <= 1) {
+      if (sum_rating / this.props.comments.length <= 1) {
         showPageAvgReview = "one-star"
-      } else if (sum_rating / this.props.business.comments.length <= 2) {
+      } else if (sum_rating / this.props.comments.length <= 2) {
         showPageAvgReview = "two-star"
-      } else if (sum_rating / this.props.business.comments.length <= 3) {
+      } else if (sum_rating / this.props.comments.length <= 3) {
         showPageAvgReview = "three-star"
-      } else if (sum_rating / this.props.business.comments.length <= 4) {
+      } else if (sum_rating / this.props.comments.length <= 4) {
         showPageAvgReview = "four-star"
       } else {
         showPageAvgReview = "five-star"
       }
-    }
+    // }
 
     
-
-
     return (
       <>
         <NavBarSearchContainer />
         <CategoryNavBar />
         {firstfourphotos}
         {/* {photos} */}
+        
         <div className="show-page-main-aside">
           <main>
             <h1>{this.props.business.name}</h1>
@@ -130,7 +143,7 @@ class BusinessShow extends React.Component {
               <span className={showPageAvgReview}>☆</span>
               <span className={showPageAvgReview}>☆</span>
             
-            <Link className="business-show-page-write-review-button" to={`/businesses/${this.props.match.params.businessId}/newcomment`}><span>☆</span><span>Write a Review</span></Link>
+              <Link className="business-show-page-write-review-button" to={`/businesses/${this.props.match.params.businessId}/newcomment`}><span>☆</span><span>Write a Review</span></Link>
             </div>
             <p>
               <span>{this.props.business.price_rating}</span>
@@ -145,12 +158,9 @@ class BusinessShow extends React.Component {
             <div className="show-page-map-and-address">
               <div className="show-page-map-box">
                 {/* <p className="show-page-map-image">for google map</p> */}
-
-                
+ 
                 <div id="map"></div>
-                
-
-
+               
                 <div className="show-page-address">
                   <p>{streetAddress}</p>
                   <p>{cityAndState}</p>
@@ -178,7 +188,7 @@ class BusinessShow extends React.Component {
             <section></section>
             <div>
               <h4>Check out the reviews</h4>
-              {comments}
+              {comments_show}
             </div>
           </main>
 

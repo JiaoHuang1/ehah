@@ -57,11 +57,20 @@
     color: white;
     font-weight: bold;
 }
-// .one-star {
-//     display: inline;
-// }
 
 .update-comment-form-main > .redirect-message > span {
     color:blue;
 }
 
+.submit-button {
+    margin-bottom: 20px;
+}
+
+#redirect-message {
+    margin-left: 10px;
+    color: white;
+    border: 1px solid blue;
+    padding: 10px 20px;
+    background-color: #2b73bb;
+    border-radius: 3px;
+}

@@ -73,6 +73,10 @@
     display: flex;
 }
 
+.show-page-main-aside main p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .show-page-map-and-address {
     display: flex;
 }
@@ -91,6 +95,7 @@
 
 .show-page-map-and-address .show-page-address p {
     font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -131,6 +136,10 @@
     border: 1px solid #e6e6e6;
     box-sizing: border-box;
     border-radius: 3px;
+}
+
+.show-page-sidebar-info-box li {
+    font-size: 15px;
 }
 
 .show-page-sidebar-info-box div {

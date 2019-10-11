@@ -13,10 +13,10 @@ export const successfulCreateComment = () => ({
     createButton: {createButton: "Created!"}
 })
 
-export const updateComment = (id, comment) => dispatch => (
-    CommentAPIUtil.updateComment(id, comment).then(() => dispatch(successfulUpdateComment()))
-)
+// export const updateComment = (id, comment) => dispatch => (
+//     CommentAPIUtil.updateComment(id, comment).then(() => dispatch(successfulUpdateComment()))
+// )
 
-export const createComment = (business_id, comment) => dispatch => (
-    CommentAPIUtil.createComment(business_id, comment).then(() => dispatch(successfulCreateComment()))
-)
+// export const createComment = (business_id, comment) => dispatch => (
+//     CommentAPIUtil.createComment(business_id, comment).then(() => dispatch(successfulCreateComment()))
+// )

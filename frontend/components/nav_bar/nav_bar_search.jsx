@@ -14,7 +14,8 @@ class NavBarSearch extends React.Component {
         if (this.props.currentUser !== undefined) {
           sessionLinks = (
             <hgroup className="navbar-search-session">
-                <h2>Hi, {this.props.currentUser.first_name}!</h2>
+                <h2 className="header-name"><img className="navbar-search-user-icon" src={window.userIcon} /></h2>
+                {/* <h2>Hi, {this.props.currentUser.first_name}!</h2> */}
                 <button className="navbar-search-login-signup-logout" onClick={this.props.logout}>Log Out</button>
             </hgroup>
         );

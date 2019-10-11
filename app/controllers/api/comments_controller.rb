@@ -1,6 +1,7 @@
 class Api::CommentsController < ApplicationController
     def show
         @comment = Comment.find(params[:id])
+        @business = @comment.business
         render :show
     end
 
@@ -9,6 +10,7 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
         @comment.business_id = params[:business_id]
+        @business = Business.find(params[:business_id])
         if @comment.save
             render 'api/comments/show' ###don't need to render anything???because it's gonna direct back to show page
         else
@@ -19,6 +21,7 @@ class Api::CommentsController < ApplicationController
     def update
         # debugger
         @comment = current_user.comments.find(params[:id])
+        @business = @comment.business
         if @comment.update(comment_params)
             render 'api/comments/show' ###don't need to render anything???because it's gonna direct back to show page
         else 

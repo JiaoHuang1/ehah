@@ -12,7 +12,6 @@ const Splash = () => {
             <div className="splash">
                 <NavBar />
                 <img className="splash-logo" src={window.splashLogoURL} />
-                {/* <NavBarSearch />  */}
                 <div><SearchFrom /></div>
             </div>
 

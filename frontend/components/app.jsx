@@ -10,12 +10,12 @@ import updateCommentContainer from './comment/update_comment_container';
 import createCommentContainer from './comment/create_comment_container';
 // import BusinessSearchByCategoryContainer from './business/business_search_by_category_container';
 import Contact from './contact_footer/contact';
-import splash from './splash/splash';
+import Splash from './splash/splash';
 
 
 const App = () => (
   <div>
-    <Route exact path="/" component={splash}/>
+    <Route exact path="/" component={Splash}/>
     <Route exact path="/login" component={LogInFormContainer} />
     <Route exact path="/signup" component={SignUpFormContainer} />
     <Route exect path="/contact" component={Contact} />

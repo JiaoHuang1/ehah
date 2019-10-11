@@ -2,16 +2,17 @@ import { connect } from 'react-redux';
 import CreateCommentForm from './create_comment_form';
 // import { fetchSingleComment } from '../../actions/comment_action';
 import { fetchSingleBusiness } from '../../actions/business_action';
-import { createComment } from '../../actions/ui_action';
+import { createComment } from '../../actions/comment_action';
 
 const mapStateToProps = (state, ownProps) => {
   return {
       business: state.entities.businesses[ownProps.match.params.businessId] || { id: null, name: ""},
-      createButton: state.ui.createButton || "Post Review"
+      // createButton: state.ui.createButton || "Post Review"
     };
 };
 
 const mapDispatchToProps = dispatch => {
+  debugger
     return {
         fetchSingleBusiness: (id) => dispatch(fetchSingleBusiness(id)),
         createComment: (business_id, comment) => dispatch(createComment(business_id, comment)),

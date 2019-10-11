@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CommentIndexItem = ({comment: {id, rating, body, user_id, updated_at}, users, currentUserId, businessId, deleteComment} ) => {
+const CommentIndexItem = ({comment: {id, rating, body, user_id, updated_at}, users, currentUserId, deleteComment} ) => {
     let editAndDelete;
     if (user_id === currentUserId) {
         editAndDelete = (
@@ -26,7 +26,7 @@ const CommentIndexItem = ({comment: {id, rating, body, user_id, updated_at}, use
         commentIndexRating = "five-star";
     }
     
-
+    // debugger
 
     return (
         <>

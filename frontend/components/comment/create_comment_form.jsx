@@ -5,7 +5,7 @@ import NavBarCreateCommentFormContainer from '../nav_bar/nav_bar_create_comment_
 class CreateCommentForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { body: "", rating: null }
+    this.state = { body: "", rating: null, createButton: "Post Review"}
     this.handleCommentBodyChange = this.handleCommentBodyChange.bind(this);
     this.handleClickStar = this.handleClickStar.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,12 +17,11 @@ class CreateCommentForm extends React.Component {
 
   
   handleCommentBodyChange(e) {
-    //   debugger
     this.setState({ body: e.target.value })
   }
 
   handleClickStar(e) {
-    //   debugger
+    
     this.setState({ rating: e.target.value })
 
     if (e.target.value === 1) {
@@ -52,9 +51,8 @@ class CreateCommentForm extends React.Component {
   }
 
   handleSubmit(e) {
-    //     // debugger
       e.preventDefault();
-      this.props.createComment(this.props.match.params.businessId, this.state);
+      this.props.createComment(this.props.match.params.businessId, this.state).then(() => this.setState({createButton: "Created!"}));
   }
 
 
@@ -62,6 +60,7 @@ class CreateCommentForm extends React.Component {
 
     let redirectMessage;
     if (this.props.createButton === "Created!") {
+      debugger
         redirectMessage =  (
         <Link id="" to={`/businesses/${this.props.match.params.businessId}`}>
             <span>Go back to</span>
@@ -84,9 +83,9 @@ class CreateCommentForm extends React.Component {
                         <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="4">☆</li>
                         <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="5">☆</li>
                     </ul>
-
-                    <input type="text" className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} />
-                    <input type="submit" className="submit-button" onSubmit={this.handleSubmit} value={this.props.createButton}/>
+                    <textarea className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} cols="30" rows="10"></textarea>
+                    {/* <input type="text" className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} /> */}
+                    <input type="submit" className="submit-button" onClick={this.handleSubmit} value={this.state.createButton}/>
                 </form>
                 {redirectMessage}
             </div>

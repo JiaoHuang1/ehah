@@ -18,11 +18,20 @@
     height: 35px;
 }
 
+.user-icon {
+    width: 35px;
+    height: auto;
+    background-color: #b9b8b8;
+    border-radius: 3px;
+    border: 1px solid #949393;
+}
+
 .splash-logo {
     display: block;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
     width: 50%;
     width: 200px;
     height: 100px;
