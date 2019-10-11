@@ -26,7 +26,7 @@ const CommentIndexItem = ({comment: {id, rating, body, user_id, updated_at}, use
         commentIndexRating = "five-star";
     }
     
-    // debugger
+    // //debugger
 
     return (
         <>

@@ -60,7 +60,7 @@ class CreateCommentForm extends React.Component {
 
     let redirectMessage;
     if (this.state.createButton === "Created!") {
-      // debugger
+      // //debugger
         redirectMessage =  (
         <Link id="redirect-message" to={`/businesses/${this.props.match.params.businessId}`}>
             <span className="redirect-message-content">Go back to </span>

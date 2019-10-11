@@ -14,7 +14,7 @@ class UpdateCommentForm extends React.Component {
 
   componentDidMount() {
     this.props.fetchSingleComment(this.props.match.params.commentId).then(({comment}) => {
-      // debugger
+      // //debugger
   
       if (comment.rating === 1) {
         document.getElementsByName("star").forEach(ele => {
@@ -95,7 +95,7 @@ class UpdateCommentForm extends React.Component {
         </Link>
         )
     }
-    // debugger
+    // //debugger
     return (
 
       <div>
