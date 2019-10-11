@@ -4,7 +4,7 @@ import NavBarSearchContainer from '../nav_bar/nav_bar_search_container';
 import CategoryNavBar from '../nav_bar/category_nav_bar';
 import CommentIndexItem from '../comment/comment_index_item';
 import Footer from '../contact_footer/footer';
-import { cpus } from 'os';
+
 
 
 class BusinessShow extends React.Component {
@@ -18,9 +18,9 @@ class BusinessShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-   
+    if (this.props.match.params.businessId !== prevProps.match.params.businessId) {
       this.props.fetchSingleBusiness(this.props.match.params.businessId);
-
+    }
   }
 
   initMap() {
@@ -82,12 +82,23 @@ class BusinessShow extends React.Component {
     }
 
 
-    const category_show = this.props.categories.map(category => {
+    // const category_show = this.props.categories.map(category => {
+    //   return (
+    //     <Link className="show-page-category-link" key={category.id} to={`/search/categories?category=${category.category_name}`}>
+    //         {category.category_name}
+    //     </Link>
+    //   )
+    // })
+    let categories = this.props.categories;
+    const category_show = this.props.business.category_ids.map(category_id => {
       return (
-        <Link className="show-page-category-link" key={category.id} to={`/search/categories?category=${category.category_name}`}>
-            {category.category_name}
+
+
+        <Link className="show-page-category-link" key={category_id} to={`/search/categories?category=${categories[category_id].category_name}`}>
+            {categories[category_id].category_name}
         </Link>
       )
+
     })
 
     
@@ -95,15 +106,42 @@ class BusinessShow extends React.Component {
     let showPageAvgReview = 0;
     // let comments_show;
     let users = this.props.users;
+    let comments = this.props.comments
     let currentUserId = this.props.currentUserId;
     // let businessId = this.props.business.id;
     let deleteComment = this.props.deleteComment;
     // debugger
-    const comments_show = this.props.comments.map(comment => {
-      sum_rating += comment.rating;
-      // debugger
-      return <CommentIndexItem key={comment.id} comment={comment} users={users} currentUserId={currentUserId} deleteComment={deleteComment}/>
+    // const comments_show = this.props.comments.map(comment => {
+    //   sum_rating += comment.rating;
+    //   // debugger
+    //   return <CommentIndexItem key={comment.id} comment={comment} users={users} currentUserId={currentUserId} deleteComment={deleteComment}/>
+    // })
+    let comments_show;
+    debugger
+    if (Object.keys(comments).length !== 0) {
+      debugger
+      comments_show = this.props.business.comment_ids.map(comment_id => {
+      debugger
+      sum_rating += comments[comment_id].rating;
+
+      if (sum_rating / this.props.business.comment_ids.length <= 1) {
+        showPageAvgReview = "one-star"
+      } else if (sum_rating / this.props.business.comment_ids.length <= 2) {
+        showPageAvgReview = "two-star"
+      } else if (sum_rating / this.props.business.comment_ids.length <= 3) {
+        showPageAvgReview = "three-star"
+      } else if (sum_rating / this.props.business.comment_ids.length <= 4) {
+        showPageAvgReview = "four-star"
+      } else {
+        showPageAvgReview = "five-star"
+      }
+
+      return <CommentIndexItem key={comment_id} comment={comments[comment_id]} users={users} currentUserId={currentUserId} deleteComment={deleteComment}/>
     })
+
+    }
+
+
     // // if (this.props.business.comments !== undefined) {
       
     //   comments = this.props.comments.map(comment_id => {
@@ -112,17 +150,7 @@ class BusinessShow extends React.Component {
     //     return <CommentIndexItem key={comment.id} comment={comment} users={this.props.business.users} currentUserId={this.props.currentUserId} businessId={this.props.business.id} deleteComment={this.props.deleteComment}/>
     //   })
 
-      if (sum_rating / this.props.comments.length <= 1) {
-        showPageAvgReview = "one-star"
-      } else if (sum_rating / this.props.comments.length <= 2) {
-        showPageAvgReview = "two-star"
-      } else if (sum_rating / this.props.comments.length <= 3) {
-        showPageAvgReview = "three-star"
-      } else if (sum_rating / this.props.comments.length <= 4) {
-        showPageAvgReview = "four-star"
-      } else {
-        showPageAvgReview = "five-star"
-      }
+ 
     // }
 
     

@@ -13,9 +13,10 @@ export const receiveSingleBusiness = ({business, comments, categories, users}) =
     users
 })
 
-export const receiveAllBusinesses = businesses => ({
+export const receiveAllBusinesses = ({businesses, categories}) => ({
     type: RECEIVE_ALL_BUSINESSES,
     businesses,
+    categories,
 })
 
 export const fetchSingleBusiness = id => dispatch => (
@@ -23,17 +24,17 @@ export const fetchSingleBusiness = id => dispatch => (
 )
 
 export const fetchAllBusinesses = () => dispatch => (
-    BusinessAPIUtil.fetchAllBusinesses().then(businesses => dispatch(receiveAllBusinesses(businesses)))
+    BusinessAPIUtil.fetchAllBusinesses().then(payload => dispatch(receiveAllBusinesses(payload)))
 )
 
 // search thunk action:
 
 export const fetchSearchBarBusiness = (find = "", loc = "") => dispatch => (
-    SearchAPIUtil.fetchSearchBarBusiness(find, loc).then(businesses => dispatch(receiveAllBusinesses(businesses)))
+    SearchAPIUtil.fetchSearchBarBusiness(find, loc).then(payload => dispatch(receiveAllBusinesses(payload)))
 )
 
 export const fetchSearchCategory = (category = "") => dispatch => (
-    SearchAPIUtil.fetchSearchCategory(category).then(businesses => dispatch(receiveAllBusinesses(businesses)))
+    SearchAPIUtil.fetchSearchCategory(category).then(payload => dispatch(receiveAllBusinesses(payload)))
 )
 
 export const deleteComment = (id) => dispatch => (

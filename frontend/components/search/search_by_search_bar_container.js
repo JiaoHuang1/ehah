@@ -5,7 +5,9 @@ import SearchBySearchBar from './search_by_search_bar';
 
 const mapStateToProps = (state) => {
   return {
+    // businesses: Object.values(state.entities.businesses),
     businesses: Object.values(state.entities.businesses),
+    categories: state.entities.categories,
   };
 };
 

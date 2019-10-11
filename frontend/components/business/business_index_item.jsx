@@ -8,7 +8,8 @@ class BusinessIndexItem extends React.Component {
   }
 
   handleRedirect() {
-      this.props.history.push(`/businesses/${this.props.business.id}`)
+      // this.props.fetchSingleBusiness().then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
+      this.props.history.push(`/businesses/${this.props.business.id}`);
   }
 
 
@@ -16,6 +17,7 @@ class BusinessIndexItem extends React.Component {
 
     let firstphoto;
     firstphoto = <img onClick={this.handleRedirect} className='business-index-page-item-img' src={this.props.business.photoUrls[0]}/>
+    // firstphoto = <Link to={`/businesses/${this.props.business.id}`}><img className='business-index-page-item-img' src={this.props.business.photoUrls[0]}/></Link>
 
     let streetAddress;
     let cityAndState;
@@ -26,15 +28,16 @@ class BusinessIndexItem extends React.Component {
 
 
     let category_show;
-    if (this.props.business.category_name !== undefined) {
-      category_show = this.props.business.category_name.map((category_name, idx) => {
+    let categories = this.props.categories;
+    // if (this.props.business.category_name !== undefined) {
+      category_show = this.props.business.category_ids.map(category_id => {
         return (
-          <Link className="business-index-page-category" key={idx} to={`/search/categories?category=${category_name}`}>
-              {category_name}
+          <Link className="business-index-page-category" key={category_id} to={`/search/categories?category=${categories[category_id].category_name}`}>
+              {categories[category_id].category_name}
           </Link>
         )
       })
-    }
+    // }
    
 
 
@@ -45,6 +48,11 @@ class BusinessIndexItem extends React.Component {
                 <div className="business-index-page-title-and-address">
                     <div className="business-index-page-business-info-section">
                         <h1>{this.props.idx}. <span onClick={this.handleRedirect}>{this.props.business.name}</span></h1>
+                        {/* <h1>
+                          {this.props.idx}. 
+                          <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
+                        </h1> */}
+
                         <p className="second-line">
                             <span>{this.props.business.price_rating}</span>
                             <span>.</span>

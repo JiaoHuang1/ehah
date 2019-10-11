@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchAllBusinesses } from '../../actions/business_action';
+import { fetchAllBusinesses, fetchSingleBusiness } from '../../actions/business_action';
 import { fetchAllCategories } from '../../actions/category_action';
 import BusinessIndex from './business_index';
 
@@ -15,6 +15,7 @@ const mapDispatchToProps = dispatch => {
   // debugger
   return {
     fetchAllBusinesses: () => dispatch(fetchAllBusinesses()),
+    fetchSingleBusiness: (id) => dispatch(fetchSingleBusiness(id)),
   };
 };
 

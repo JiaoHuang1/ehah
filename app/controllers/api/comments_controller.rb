@@ -31,6 +31,7 @@ class Api::CommentsController < ApplicationController
 
     def destroy
         @comment = current_user.comments.find(params[:id])
+        @business = @comment.business
         if @comment.destroy
             render 'api/comments/show'
         else

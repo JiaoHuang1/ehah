@@ -1,6 +1,6 @@
 class Api::BusinessesController < ApplicationController
     def index
-        @businesses = Business.all.includes()
+        @businesses = Business.all
         @categories = Category.joins(:businesses).distinct
     end
 

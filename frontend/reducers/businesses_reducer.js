@@ -5,6 +5,7 @@ const businessesReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SINGLE_BUSINESS:
+      // debugger
       return Object.assign({}, state, action.business);
     case RECEIVE_SINGLE_COMMENT:
       return Object.assign({}, state, {[action.business.id]: action.business})

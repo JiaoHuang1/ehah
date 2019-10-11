@@ -20,7 +20,7 @@ class SearchBySearchBar extends React.Component {
         if (this.props.location.search !== prevProps.location.search) {
             const values = queryString.parse(this.props.location.search);
             const category = values.category;
-            this.props.fetchSearchCategory(category)
+            this.props.fetchSearchCategory(category).then(() => this.initMap());
         }
     }
 
@@ -38,7 +38,8 @@ class SearchBySearchBar extends React.Component {
     render() {
         let businessItem;
         {if (this.props.businesses !== undefined) {
-            businessItem = this.props.businesses.map((business, idx) => <BusinessIndexItem idx={idx + 1} business={business} key={business.id} /> )           
+            // businessItem = this.props.businesses.map((business, idx) => <BusinessIndexItem idx={idx + 1} business={business} key={business.id} /> )           
+            businessItem = this.props.businesses.map((business, idx) => <BusinessIndexItem idx={idx + 1} business={business} categories={this.props.categories} key={business.id} /> )
         }}
 
         return(
