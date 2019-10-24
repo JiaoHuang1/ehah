@@ -1,5 +1,5 @@
 export const createComment = (business_id, comment) => {
-    // //debugger
+    // debugger
     return $.ajax({
         method: "POST",
         url: `/api/businesses/${business_id}/comments`,

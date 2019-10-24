@@ -13,7 +13,7 @@ class BusinessShow extends React.Component {
   }
 
   componentDidMount() {
-    // //debugger
+    // debugger
     this.props.fetchSingleBusiness(this.props.match.params.businessId).then(() => this.initMap()); 
   }
 
@@ -35,11 +35,11 @@ class BusinessShow extends React.Component {
 
 
   render() {
-    // //debugger
+    // debugger
     if (!this.props.business) {
       return null;
     }
-    //debugger
+    // debugger
     // let photos;
     let firstfourphotos;
     // let firstphoto;
@@ -70,7 +70,7 @@ class BusinessShow extends React.Component {
     
     // let streetAddress;
     // let cityAndState;
-    // //debugger
+    // debugger
     // if (this.props.business.address !== undefined) {
     const streetAddress = this.props.business.address.split(',')[0];
     const cityAndState = this.props.business.address.split(',').slice(1).join(",");
@@ -110,18 +110,18 @@ class BusinessShow extends React.Component {
     let currentUserId = this.props.currentUserId;
     // let businessId = this.props.business.id;
     let deleteComment = this.props.deleteComment;
-    // //debugger
+    // debugger
     const comments_show = this.props.comments.map(comment => {
       sum_rating += comment.rating;
-      // //debugger
+      // debugger
       return <CommentIndexItem key={comment.id} comment={comment} users={users} currentUserId={currentUserId} deleteComment={deleteComment}/>
     })
     // let comments_show;
-    // //debugger
+    // debugger
     // if (Object.keys(comments).length !== 0) {
-    //   //debugger
+    //   debugger
     //   comments_show = this.props.business.comment_ids.map(comment_id => {
-    //   //debugger
+    //   debugger
     //   sum_rating += comments[comment_id].rating;
 
     //   if (sum_rating / this.props.business.comment_ids.length <= 1) {

@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   let comments;
   let users = {};
   if (business) {
-    // //debugger
+    // debugger
     const categoryIds = business.category_ids;
     categories = categoryIds.map(catId => {
       return state.entities.categories[catId]
@@ -25,7 +25,7 @@ const mapStateToProps = (state, ownProps) => {
     // }) 
   
     const userIds = [];
-// //debugger
+// debugger
     comments = [];
     business.comment_ids.map(comment_id => {
       const comment = state.entities.comments[comment_id];
@@ -43,7 +43,7 @@ const mapStateToProps = (state, ownProps) => {
     })
   }
 
-  //debugger
+  // debugger
 
   return {
     business,

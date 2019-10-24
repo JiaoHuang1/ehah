@@ -4,7 +4,7 @@ import { fetchAllCategories } from '../../actions/category_action';
 import BusinessIndex from './business_index';
 
 const mapStateToProps = (state, ownProps) => {
-    // //debugger
+    // debugger
   return {
     businesses: Object.values(state.entities.businesses),
     categories: state.entities.categories,
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  // //debugger
+  // debugger
   return {
     fetchAllBusinesses: () => dispatch(fetchAllBusinesses()),
     fetchSingleBusiness: (id) => dispatch(fetchSingleBusiness(id)),

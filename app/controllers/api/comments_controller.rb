@@ -6,7 +6,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def create
-        # //debugger
+        # debugger
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
         @comment.business_id = params[:business_id]
@@ -19,7 +19,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def update
-        # //debugger
+        # debugger
         @comment = current_user.comments.find(params[:id])
         @business = @comment.business
         if @comment.update(comment_params)

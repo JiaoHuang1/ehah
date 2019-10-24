@@ -7,7 +7,7 @@ const commentsReducer = (state = {}, action) => {
   let business
   switch(action.type) {
     case RECEIVE_SINGLE_BUSINESS:
-      //debugger
+      // debugger
       return Object.assign({}, state, action.comments);
     case RECEIVE_SINGLE_COMMENT:
       return Object.assign({}, state, {[action.comment.id]: action.comment})
