@@ -81,8 +81,8 @@
 }
 
 .login-input:focus {
-    border: 1px solid blue;
-    box-shadow: 0 0 3px blue;
+    border: 1px solid #2b73bb;
+    box-shadow: 0 0 3px #2b73bb;
 }
 
 .session-submit {
@@ -122,6 +122,11 @@
     border: 1px solid #ccc;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+.demo-submit:hover {
+    border: 1px solid #2b73bb;
+    box-shadow: 0 0 3px #2b73bb;
 }
 
 .seperator {
