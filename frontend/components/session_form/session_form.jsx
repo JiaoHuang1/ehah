@@ -37,17 +37,17 @@ class SessionForm extends React.Component {
     this.props.processForm(this.props.demouser).then(() => this.props.history.push("/"));
   }
 
-  renderErrors() {
-    return(
-      <ul className="error-messages">
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return(
+  //     <ul className="error-messages">
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     let title;
@@ -56,6 +56,30 @@ class SessionForm extends React.Component {
     let signUpNames;
     let signUpZipcode;
     let footer;
+
+    // handle errors seperately
+    let loginError;
+    let signupFnError;
+    let signupLnError;
+    let signupEmailError;
+    let signupZipError;
+    let signupPsError;
+
+    this.props.errors.map(error => {
+      if (error === "Invalid email/password combination") {
+        loginError = error;
+      } else if (error === "First name can't be blank") {
+        signupFnError = error;
+      } else if (error === "Last name can't be blank") {
+        signupLnError = error;
+      } else if (error === "Email can't be blank") {
+        signupEmailError = error;
+      } else if (error === "Zipcode can't be blank") {
+        signupZipError = error;
+      } else if (error === "Password is too short (minimum is 6 characters)") {
+        signupPsError = error;
+      }
+    })
 
     if (this.props.formType === 'Log In') {
       title = "Log In to eHah";
@@ -88,6 +112,7 @@ class SessionForm extends React.Component {
             className="login-input"
             placeholder="First Name"
           />
+          <p className="error-messages">{signupFnError}</p>
 
           {/* Last Name Input */}
           <input type="text"
@@ -96,16 +121,20 @@ class SessionForm extends React.Component {
             className="login-input"
             placeholder="Last Name"
           />
+          <p className="error-messages">{signupLnError}</p>
         </>
       )
       signUpZipcode = (
         // zipcode input
+        <>
         <input type="text"
           value={this.state.zipcode}
           onChange={this.handleChange('zipcode')}
           className="login-input"
           placeholder="ZIP Code"
         />
+        <p className="error-messages">{signupZipError}</p>
+        </>
       )
       footer = (
         <p className="signup-login-footer">Already on eHah? 
@@ -113,6 +142,7 @@ class SessionForm extends React.Component {
         </p>
       )
     }
+
     return (
       <div className="signup-login-page">
        
@@ -125,12 +155,12 @@ class SessionForm extends React.Component {
         <section className="signup-login-container">
           <div className="whole-form-except-img">
             <div className="whole-form-except-last-signup">
-              {this.renderErrors()}
+              {/* {this.renderErrors()} */}
               <h1 className="signup-login-title">{title}</h1>
               <h2 className="signup-login-subtitle">{subTitle}</h2>     
               {signUpNames}
               {demoUserButton}
-
+              <p className="error-messages">{loginError}</p>
               <form onSubmit={this.handleSubmit} className="login-form-box">
 
                 <div className="login-form">  
@@ -141,7 +171,8 @@ class SessionForm extends React.Component {
                     className="login-input"
                     placeholder="Email"
                   />
-                  <br/>
+                  <p className="error-messages">{signupEmailError}</p>
+                 
                   {/* password input */}
                   <input type="password"
                     value={this.state.password}
@@ -149,7 +180,8 @@ class SessionForm extends React.Component {
                     className="login-input"
                     placeholder="Password"
                   />
-                  <br/>
+                  <p className="error-messages">{signupPsError}</p>
+          
                   {signUpZipcode}
                   <br/>
                   <input className="session-submit" type="submit" value={this.props.formType} />

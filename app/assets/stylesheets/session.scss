@@ -71,7 +71,7 @@
 .login-input {
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-top: 10px;
     padding: 5px 10px;
     font-size: 15px;
     border-radius: 3px;
@@ -157,8 +157,10 @@
 }
 
 .error-messages {
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    text-align: center;
 }
 
 
