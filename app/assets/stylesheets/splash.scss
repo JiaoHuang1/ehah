@@ -1,8 +1,10 @@
 .splash {
     height: 60vh;
+    min-width: 1300px;
     background-image: image-url('splash_background.jpg');
     background-size: cover;
     padding: 28px 160px;
+    
 }
 
 .login-signup {
@@ -102,7 +104,7 @@
 .splash-page-category-section {
     margin: 100px 100px 0 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .splash-page-category-link {
