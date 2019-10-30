@@ -8,6 +8,6 @@ export const fetchSearchBarBusiness = (find = "", loc = "") => {
 export const fetchSearchCategory = (category = "") => {
     return $.ajax({
         method: "GET",
-        url: `/api/search/businesses?find=${category}`,
+        url: `/api/search/categories?category=${category}`,
     })
 }
