@@ -111,7 +111,10 @@ class BusinessShow extends React.Component {
     // let businessId = this.props.business.id;
     let deleteComment = this.props.deleteComment;
     // debugger
-    const comments_show = this.props.comments.map(comment => {
+  
+    const sortedComments = this.props.comments.sort((a, b) => b.updated_at > a.updated_at ? 1 : -1)
+   
+    const comments_show = sortedComments.map(comment => {
       sum_rating += comment.rating;
       // debugger
       return <CommentIndexItem key={comment.id} comment={comment} users={users} currentUserId={currentUserId} deleteComment={deleteComment}/>

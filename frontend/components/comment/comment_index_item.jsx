@@ -39,7 +39,7 @@ const CommentIndexItem = ({comment: {id, rating, body, user_id, updated_at}, use
                     <span className={commentIndexRating}>☆</span>
                     <span className={commentIndexRating}>☆</span>
                     <span className={commentIndexRating}>☆</span>
-                    <span className="comment-index-time">{updated_at.split("T")[0]}</span>
+                    <span className="comment-index-time">{updated_at.split("T")[0]} {updated_at.split("T")[1].slice(0, 8)}</span>
                 </div>
                 
                 <p>{body}</p>
