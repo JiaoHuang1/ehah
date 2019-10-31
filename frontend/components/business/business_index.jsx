@@ -37,9 +37,10 @@ class BusinessIndex extends React.Component {
                 <div className="business-index-page-main-and-aside">
                     <ul>
                         {businessItem}
-    
                     </ul>
-                    <div id="map"></div>
+                    <div>
+                        <div id="map"></div>
+                    </div>
                 </div>
 
                 <Footer />

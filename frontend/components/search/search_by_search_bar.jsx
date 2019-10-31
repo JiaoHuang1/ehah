@@ -52,8 +52,9 @@ class SearchBySearchBar extends React.Component {
                     <ul>
                         {businessItem}
                     </ul>
-
-                    <div id="map"></div>
+                    <div>
+                        <div id="map"></div>
+                    </div>
                 </div>
 
                 <Footer />
