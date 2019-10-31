@@ -162,7 +162,7 @@
 .business-show-page-write-review-button span {
     color: red;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -173,7 +173,7 @@
     margin: 10px;
 }
 
-.business-show-page-write-review-button span:first-child::before {
+.business-show-page-write-review-button span:first-child:before {
     content: "\2605";
     position: absolute;
 }

@@ -33,9 +33,10 @@
 }
 
 
-.one-star {
-    color: orange;
+.no-star {
+    color: gray;
     font-size: 15px;
+    
 }
 
 .one-star:first-child:before {
@@ -45,6 +46,7 @@
 
 .one-star {
     color: #f2bd79;
+    font-size: 15px;
 }
 
 .two-star {
@@ -115,8 +117,4 @@
 .five-star:before {
     content: "\2605";
     position: absolute;
-}
-
-.orginal-star-color {
-    color: gray;
 }

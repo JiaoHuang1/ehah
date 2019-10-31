@@ -124,17 +124,19 @@ class BusinessShow extends React.Component {
     //   debugger
     //   sum_rating += comments[comment_id].rating;
 
-    //   if (sum_rating / this.props.business.comment_ids.length <= 1) {
-    //     showPageAvgReview = "one-star"
-    //   } else if (sum_rating / this.props.business.comment_ids.length <= 2) {
-    //     showPageAvgReview = "two-star"
-    //   } else if (sum_rating / this.props.business.comment_ids.length <= 3) {
-    //     showPageAvgReview = "three-star"
-    //   } else if (sum_rating / this.props.business.comment_ids.length <= 4) {
-    //     showPageAvgReview = "four-star"
-    //   } else {
-    //     showPageAvgReview = "five-star"
-    //   }
+      if (sum_rating / this.props.business.comment_ids.length <= 1) {
+        showPageAvgReview = "one-star"
+      } else if (sum_rating / this.props.business.comment_ids.length <= 2) {
+        showPageAvgReview = "two-star"
+      } else if (sum_rating / this.props.business.comment_ids.length <= 3) {
+        showPageAvgReview = "three-star"
+      } else if (sum_rating / this.props.business.comment_ids.length <= 4) {
+        showPageAvgReview = "four-star"
+      } else if (sum_rating / this.props.business.comment_ids.length <= 5) {
+        showPageAvgReview = "five-star"
+      } else {
+        showPageAvgReview = "no-star"
+      }
 
     //   return <CommentIndexItem key={comment_id} comment={comments[comment_id]} users={users} currentUserId={currentUserId} deleteComment={deleteComment}/>
     // })
@@ -171,7 +173,7 @@ class BusinessShow extends React.Component {
               <span className={showPageAvgReview}>☆</span>
               <span className={showPageAvgReview}>☆</span>
             
-              <Link className="business-show-page-write-review-button" to={`/businesses/${this.props.match.params.businessId}/newcomment`}><span>☆</span><span>Write a Review</span></Link>
+              <Link className="business-show-page-write-review-button" to={`/businesses/${this.props.match.params.businessId}/newcomment`}><span id="write-a-review-star">☆</span><span>Write a Review</span></Link>
             </div>
             <p>
               <span>{this.props.business.price_rating}</span>
