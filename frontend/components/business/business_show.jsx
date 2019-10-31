@@ -173,9 +173,9 @@ class BusinessShow extends React.Component {
               <span className={showPageAvgReview}>☆</span>
               <span className={showPageAvgReview}>☆</span>
             
-              <Link className="business-show-page-write-review-button" to={`/businesses/${this.props.match.params.businessId}/newcomment`}><span id="write-a-review-star">☆</span><span>Write a Review</span></Link>
+              <Link className="business-show-page-write-review-button" to={`/businesses/${this.props.match.params.businessId}/newcomment`}><span>☆</span><span>Write a Review</span></Link>
             </div>
-            <p>
+            <p id="show-page-category-show">
               <span>{this.props.business.price_rating}</span>
               <span>.</span>
               {category_show}
