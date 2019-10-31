@@ -14,7 +14,6 @@ class UpdateCommentForm extends React.Component {
 
   componentDidMount() {
     this.props.fetchSingleComment(this.props.match.params.commentId).then(({comment}) => {
-      // debugger
   
       if (comment.rating === 1) {
         document.getElementsByName("star").forEach(ele => {
@@ -38,7 +37,7 @@ class UpdateCommentForm extends React.Component {
         })
       } 
 
-      this.setState({body: comment.body})
+      this.setState({body: comment.body, rating: comment.rating})
 
     } )
   }
@@ -95,7 +94,7 @@ class UpdateCommentForm extends React.Component {
         </Link>
         )
     }
-    // debugger
+
     return (
 
       <div>
@@ -112,7 +111,6 @@ class UpdateCommentForm extends React.Component {
                 </ul>
 
                 <textarea className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} cols="30" rows="10"></textarea>
-                {/* <input type="text" className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} /> */}
                 <input className="submit-button" type="submit" onSubmit={this.handleSubmit} value={this.state.updateButton}/>
             </form>
             {redirectMessage}

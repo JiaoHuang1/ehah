@@ -13,7 +13,6 @@ class BusinessShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchSingleBusiness(this.props.match.params.businessId).then(() => this.initMap()); 
   }
 
@@ -35,15 +34,11 @@ class BusinessShow extends React.Component {
 
 
   render() {
-    // debugger
     if (!this.props.business) {
       return null;
     }
-    // debugger
-    // let photos;
+  
     let firstfourphotos;
-    // let firstphoto;
-    // if (this.props.business.photoUrls !== undefined) {
       const firstphoto = <img className="show-page-side-image" src={this.props.business.photoUrls[0]}/>
 
       if (this.props.business.photoUrls.length >= 4) {
@@ -66,15 +61,9 @@ class BusinessShow extends React.Component {
       }
 
     const photos = this.props.business.photoUrls.map((photo, idx) => <img className="show-page-single-image" key={idx} src={photo}/>);
-    // } 
-    
-    // let streetAddress;
-    // let cityAndState;
-    // debugger
-    // if (this.props.business.address !== undefined) {
+
     const streetAddress = this.props.business.address.split(',')[0];
     const cityAndState = this.props.business.address.split(',').slice(1).join(",");
-    // }
 
     let weekendtime =`${this.props.business.weekend_open_hour} - ${this.props.business.weekend_close_hour}`
     if (this.props.business.weekend_open_hour === "closed") {
@@ -89,76 +78,34 @@ class BusinessShow extends React.Component {
         </Link>
       )
     })
-    // let categories = this.props.categories;
-    // const category_show = this.props.business.category_ids.map(category_id => {
-    //   return (
-
-
-    //     <Link className="show-page-category-link" key={category_id} to={`/search/categories?category=${categories[category_id].category_name}`}>
-    //         {categories[category_id].category_name}
-    //     </Link>
-    //   )
-
-    // })
-
-    
+   
     let sum_rating = 0;
     let showPageAvgReview = 0;
-    // let comments_show;
     let users = this.props.users;
-    let comments = this.props.comments
     let currentUserId = this.props.currentUserId;
-    // let businessId = this.props.business.id;
     let deleteComment = this.props.deleteComment;
-    // debugger
   
     const sortedComments = this.props.comments.sort((a, b) => b.updated_at > a.updated_at ? 1 : -1)
    
     const comments_show = sortedComments.map(comment => {
       sum_rating += comment.rating;
-      // debugger
       return <CommentIndexItem key={comment.id} comment={comment} users={users} currentUserId={currentUserId} deleteComment={deleteComment}/>
     })
-    // let comments_show;
-    // debugger
-    // if (Object.keys(comments).length !== 0) {
-    //   debugger
-    //   comments_show = this.props.business.comment_ids.map(comment_id => {
-    //   debugger
-    //   sum_rating += comments[comment_id].rating;
 
-      if (sum_rating / this.props.business.comment_ids.length <= 1) {
-        showPageAvgReview = "one-star"
-      } else if (sum_rating / this.props.business.comment_ids.length <= 2) {
-        showPageAvgReview = "two-star"
-      } else if (sum_rating / this.props.business.comment_ids.length <= 3) {
-        showPageAvgReview = "three-star"
-      } else if (sum_rating / this.props.business.comment_ids.length <= 4) {
-        showPageAvgReview = "four-star"
-      } else if (sum_rating / this.props.business.comment_ids.length <= 5) {
-        showPageAvgReview = "five-star"
-      } else {
-        showPageAvgReview = "no-star"
-      }
-
-    //   return <CommentIndexItem key={comment_id} comment={comments[comment_id]} users={users} currentUserId={currentUserId} deleteComment={deleteComment}/>
-    // })
-
-    // }
-
-
-    // // if (this.props.business.comments !== undefined) {
-      
-    //   comments = this.props.comments.map(comment_id => {
-    //     let comment = comments[comment_id];
-    //     sum_rating += comment.rating;
-    //     return <CommentIndexItem key={comment.id} comment={comment} users={this.props.business.users} currentUserId={this.props.currentUserId} businessId={this.props.business.id} deleteComment={this.props.deleteComment}/>
-    //   })
-
- 
-    // }
-
-    
+    if (sum_rating / this.props.business.comment_ids.length <= 1) {
+      showPageAvgReview = "one-star"
+    } else if (sum_rating / this.props.business.comment_ids.length <= 2) {
+      showPageAvgReview = "two-star"
+    } else if (sum_rating / this.props.business.comment_ids.length <= 3) {
+      showPageAvgReview = "three-star"
+    } else if (sum_rating / this.props.business.comment_ids.length <= 4) {
+      showPageAvgReview = "four-star"
+    } else if (sum_rating / this.props.business.comment_ids.length <= 5) {
+      showPageAvgReview = "five-star"
+    } else {
+      showPageAvgReview = "no-star"
+    }
+  
     return (
       <>
         <NavBarSearchContainer />
@@ -190,7 +137,6 @@ class BusinessShow extends React.Component {
       
             <div className="show-page-map-and-address">
               <div className="show-page-map-box">
-                {/* <p className="show-page-map-image">for google map</p> */}
  
                 <div id="map"></div>
                
@@ -244,12 +190,9 @@ class BusinessShow extends React.Component {
               </div>
             </ul>
           </aside>
-
-
-        
+      
       </div>
-
-
+      
       <Footer />
     </>
     );
