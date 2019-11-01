@@ -39,7 +39,18 @@ class BusinessIndexItem extends React.Component {
       })
     // }
    
-
+    let shortDescription;
+    if (this.props.business.description.length > 250) {
+      shortDescription = (
+        <p className="business-index-page-description">
+          <span>{this.props.business.description.slice(0, 250)}</span>
+          <span>...</span>
+          <span>read more</span>
+        </p>
+      )
+    } else {
+      shortDescription = <p className="business-index-page-description">"{this.props.business.description}"</p>
+    }
 
     return (
         <li>
@@ -67,7 +78,7 @@ class BusinessIndexItem extends React.Component {
                     </div>
                 </div>
                     
-                <p className="business-index-page-description">"{this.props.business.description}"</p>
+                {shortDescription}
             </div>
 
         </li>

@@ -43,8 +43,7 @@ class BusinessIndex extends React.Component {
                     </div>
                 </div>
 
-                <Footer />
-               
+                <Footer />         
             </>
         )
     }
