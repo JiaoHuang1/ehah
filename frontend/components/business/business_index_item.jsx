@@ -5,7 +5,24 @@ class BusinessIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleRedirect = this.handleRedirect.bind(this);
+
+    //
+    this.state = { show: false };
+    //
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
+
+  //
+  showModal() {
+    this.setState({ show: true });
+
+  };
+
+  hideModal() {
+    this.setState({ show: false});
+  };
+  //
 
   handleRedirect() {
       // this.props.fetchSingleBusiness().then(() => this.props.history.push(`/businesses/${this.props.business.id}`));
@@ -45,24 +62,34 @@ class BusinessIndexItem extends React.Component {
         <p className="business-index-page-description">
           <span>{this.props.business.description.slice(0, 250)}</span>
           <span>...</span>
-          <span>read more</span>
+          <span onClick={this.showModal}>read more</span>
         </p>
       )
     } else {
       shortDescription = <p className="business-index-page-description">"{this.props.business.description}"</p>
     }
 
+    let showHideClassName = this.state.show ? "modal display-block" : "modal display-none";
+
+
     return (
+      <>
+        <div show={this.state.show}>
+            <div className={showHideClassName }>
+            <section className="modal-main">
+              <h1>About the Business</h1>
+              <p>{this.props.business.description}</p>
+              <button onClick={this.hideModal}>close</button>
+            </section>
+            </div>
+        </div>
+      
         <li>
             <div>{firstphoto}</div>
             <div className="business-index-page-main-without-img">
                 <div className="business-index-page-title-and-address">
                     <div className="business-index-page-business-info-section">
                         <h1>{this.props.idx}. <span onClick={this.handleRedirect}>{this.props.business.name}</span></h1>
-                        {/* <h1>
-                          {this.props.idx}. 
-                          <Link to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
-                        </h1> */}
 
                         <p className="second-line">
                             <span>{this.props.business.price_rating}</span>
@@ -82,6 +109,7 @@ class BusinessIndexItem extends React.Component {
             </div>
 
         </li>
+      </>
     );
   }
 }

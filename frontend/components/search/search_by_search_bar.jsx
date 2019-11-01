@@ -39,13 +39,14 @@ class SearchBySearchBar extends React.Component {
 
     render() {
         let businessItem;
+        let descriptionModal;
         {if (this.props.businesses !== undefined) {
             // businessItem = this.props.businesses.map((business, idx) => <BusinessIndexItem idx={idx + 1} business={business} key={business.id} /> )           
             businessItem = this.props.businesses.map((business, idx) => <BusinessIndexItem idx={idx + 1} business={business} categories={this.props.categories} key={business.id} /> )
         }}
 
         return(
-            <>
+            <div id="search-main">
                 <NavBarSearchContainer />
                 <CategoryNavBar />
                 <div className="business-index-page-main-and-aside">
@@ -57,9 +58,8 @@ class SearchBySearchBar extends React.Component {
                     </div>
                 </div>
 
-                <Footer />
-               
-            </>
+                <Footer /> 
+            </div>
         )
     }
  
