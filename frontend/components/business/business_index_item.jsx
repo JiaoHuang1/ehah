@@ -61,8 +61,8 @@ class BusinessIndexItem extends React.Component {
       shortDescription = (
         <p className="business-index-page-description">
           <span>{this.props.business.description.slice(0, 250)}</span>
-          <span>...</span>
-          <span onClick={this.showModal}>read more</span>
+          <span> ... </span>
+          <span onClick={this.showModal}>Read more</span>
         </p>
       )
     } else {
@@ -79,7 +79,7 @@ class BusinessIndexItem extends React.Component {
             <section className="modal-main">
               <h1>About the Business</h1>
               <p>{this.props.business.description}</p>
-              <button onClick={this.hideModal}>close</button>
+              <button id="modal-close-button" onClick={this.hideModal}>close</button>
             </section>
             </div>
         </div>
