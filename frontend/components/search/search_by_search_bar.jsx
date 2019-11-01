@@ -37,10 +37,25 @@ class SearchBySearchBar extends React.Component {
         let markers = this.props.businesses.map( business => {
             return new google.maps.Marker({ 
                 position: { lat: business.latitude, lng: business.longitude }, 
+                animation: google.maps.Animation.DROP,
                 label: labels[labelIndex++ % labels.length], 
                 map: map 
             });
         })
+
+        markers.map(marker => {
+            let that = this;
+            return marker.addListener('click', function() {
+                console.log(that.props.businesses[this.label - 1])
+                infowindow(that.props.businesses[this.label - 1]).open(map, marker)
+            });
+        });
+        
+        var contentString = (business) => `<a href=/#/businesses/${business.id}>${business.name}</a>`;
+
+        var infowindow = (business) => new google.maps.InfoWindow({
+            content: contentString(business)
+        });
     }
 
 
