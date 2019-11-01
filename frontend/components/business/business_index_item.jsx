@@ -16,11 +16,12 @@ class BusinessIndexItem extends React.Component {
   //
   showModal() {
     this.setState({ show: true });
-
+    document.getElementById("map").className = "position-when-modal-show";
   };
 
   hideModal() {
     this.setState({ show: false});
+    document.getElementById("map").className = "";
   };
   //
 
