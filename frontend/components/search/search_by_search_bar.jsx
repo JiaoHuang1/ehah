@@ -27,12 +27,19 @@ class SearchBySearchBar extends React.Component {
     }
 
     initMap() {
+        var labels = Array.from({length: this.props.businesses.length}, (v,k) => k + 1).join("");
+        var labelIndex = 0;
+
         let firstMarker = { lat: this.props.businesses[0].latitude, lng: this.props.businesses[0].longitude };
         let map = new google.maps.Map(
             document.getElementById('map'), { zoom: 11, center: firstMarker }
         );
         let markers = this.props.businesses.map( business => {
-            return new google.maps.Marker({ position: { lat: business.latitude, lng: business.longitude }, map: map });
+            return new google.maps.Marker({ 
+                position: { lat: business.latitude, lng: business.longitude }, 
+                label: labels[labelIndex++ % labels.length], 
+                map: map 
+            });
         })
     }
 
