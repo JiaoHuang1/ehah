@@ -43,9 +43,13 @@ class SearchBySearchBar extends React.Component {
 
         markers.map(marker => {
             let that = this;
-            return marker.addListener('click', function() {
+            marker.addListener('mouseover', function() {
                 console.log(that.props.businesses[this.label - 1])
                 infowindow(that.props.businesses[this.label - 1]).open(map, marker)
+            });
+
+            marker.addListener('mouseout', function() {
+                infowindow(that.props.businesses[this.label - 1]).close();
             });
         });
         
