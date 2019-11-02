@@ -13,6 +13,7 @@ class UpdateCommentForm extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearCommentError();
     this.props.fetchSingleComment(this.props.match.params.commentId).then(({comment}) => {
   
       if (comment.rating === 1) {
@@ -97,7 +98,16 @@ class UpdateCommentForm extends React.Component {
         )
     }
     
-    let showErrors = this.props.errors.map((err, idx) => <li key={idx}>{err}</li>)
+    // let showErrors = this.props.errors.map((err, idx) => <li key={idx}>{err}</li>)
+    let ratingErrors;
+    let bodyErrors;
+    this.props.errors.map(err => {
+      if (err === "Rating can't be blank"){
+        ratingErrors = "Please rate the business by stars";
+      } else if (err === "Body can't be blank") {
+        bodyErrors = "Comment can't be blank";
+      }
+    })
     
     return (
 
@@ -113,8 +123,10 @@ class UpdateCommentForm extends React.Component {
                     <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="4">☆</li>
                     <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="5">☆</li>
                 </ul>
-                <ul>{showErrors}</ul>
+                {/* <ul>{showErrors}</ul> */}
+                <p className="comment-form-errors">{ratingErrors}</p>
                 <textarea className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} cols="30" rows="10"></textarea>
+                <p className="comment-form-errors">{bodyErrors}</p>
                 <input className="submit-button" type="submit" onSubmit={this.handleSubmit} value={this.state.updateButton}/>
             </form>
             {redirectMessage}

@@ -12,6 +12,7 @@ class CreateCommentForm extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearCommentError();
     this.props.fetchSingleBusiness(this.props.match.params.businessId)
   }
 
