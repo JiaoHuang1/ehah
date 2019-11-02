@@ -76,7 +76,7 @@ class UpdateCommentForm extends React.Component {
 
   handleSubmit(e) {
       e.preventDefault();
-      this.props.updateComment(this.props.match.params.commentId, {body: this.state.body, rating: this.state.rating}).then(() => this.setState({updateButton: "Updated!"}));
+      this.props.updateComment(this.props.match.params.commentId, {body: this.state.body, rating: this.state.rating}).then(() => this.setState({updateButton: "Updated!"})).then(() => this.props.clearCommentError());
   }
 
 

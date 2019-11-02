@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import UpdateCommentForm from './update_comment_form';
-import { updateComment, fetchSingleComment } from '../../actions/comment_action';
+import { updateComment, fetchSingleComment, clearCommentError } from '../../actions/comment_action';
 // import { fetchSingleBusiness } from '../../actions/business_action';
 // import { updateComment } from '../../actions/ui_action';
 // import { updateComment } from '../../actions/comment_action';
@@ -27,6 +27,7 @@ const mapDispatchToProps = dispatch => {
     fetchSingleComment: (id) => dispatch(fetchSingleComment(id)),
     // fetchSingleBusiness: (id) => dispatch(fetchSingleBusiness),
     updateComment: (id, comment) => dispatch(updateComment(id, comment)),
+    clearCommentError: () => dispatch(clearCommentError()),
   };
 };
 

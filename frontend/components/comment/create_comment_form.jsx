@@ -12,7 +12,7 @@ class CreateCommentForm extends React.Component {
   }
 
   componentDidMount() {
-      this.props.fetchSingleBusiness(this.props.match.params.businessId)
+    this.props.fetchSingleBusiness(this.props.match.params.businessId)
   }
 
   
@@ -49,7 +49,7 @@ class CreateCommentForm extends React.Component {
 
   handleSubmit(e) {
       e.preventDefault();
-      this.props.createComment(this.props.match.params.businessId, this.state).then(() => this.setState({createButton: "Created!"}));
+      this.props.createComment(this.props.match.params.businessId, this.state).then(() => this.setState({createButton: "Created!"})).then(() => this.props.clearCommentError());
   }
 
 

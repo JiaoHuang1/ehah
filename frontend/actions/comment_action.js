@@ -3,6 +3,7 @@ import * as CommentAPIUtil from '../util/comment_api_util';
 export const RECEIVE_SINGLE_COMMENT = 'RECEIVE_SINGLE_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
+export const CLEAR_COMMENT_ERROR = 'CLEAR_COMMENT_ERROR';
 
 export const receiveSingleComment = ({comment, business}) => ({
     type: RECEIVE_SINGLE_COMMENT,
@@ -18,6 +19,10 @@ export const successfulDeleteComment = (comment) => ({
 export const receiveCommentErrors = errors => ({
     type: RECEIVE_COMMENT_ERRORS,
     errors,
+})
+
+export const clearCommentError = () => ({
+    type: CLEAR_COMMENT_ERROR,
 })
 
 

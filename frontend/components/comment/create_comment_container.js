@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import CreateCommentForm from './create_comment_form';
 // import { fetchSingleComment } from '../../actions/comment_action';
 import { fetchSingleBusiness } from '../../actions/business_action';
-import { createComment } from '../../actions/comment_action';
+import { createComment, clearCommentError } from '../../actions/comment_action';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,6 +16,7 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchSingleBusiness: (id) => dispatch(fetchSingleBusiness(id)),
         createComment: (business_id, comment) => dispatch(createComment(business_id, comment)),
+        clearCommentError: () => dispatch(clearCommentError()),
   };
 };
 
