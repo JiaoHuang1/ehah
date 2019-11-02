@@ -8,6 +8,7 @@ import { updateComment, fetchSingleComment } from '../../actions/comment_action'
 const mapStateToProps = (state, ownProps) => {
   const commentId = ownProps.match.params.commentId;
   const comment = state.entities.comments[commentId];
+  const errors = state.errors.comment;
   let business;
   if (comment) {
     business = state.entities.businesses[comment.business_id];
@@ -16,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     comment,
     business,
+    errors,
     };
 };
   // comment: state.entities.comments[ownProps.match.params.commentId] || { id: null, rating: null, body: "", business: {id: null, name: ""}},

@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 // import { signup, login, logout } from './util/session_api_util';
-// import { signup, login, logout } from './actions/session_actions';
+import { signup, login, logout } from './actions/session_actions';
 // import { fetchSingleBusiness } from './util/business_api_util';
-import { fetchSingleBusiness, deleteComment } from './actions/business_action';
+// import { fetchSingleBusiness, deleteComment } from './actions/business_action';
 // import { fetchAllCategories } from './util/category_api_util';
 // import { fetchAllCategories } from './actions/category_action';
 // import { fetchAllBusinesses } from './util/business_api_util';
@@ -16,7 +16,7 @@ import { fetchSingleBusiness, deleteComment } from './actions/business_action';
 // import { fetchSearchBarBusiness, fetchSearchCategory } from './actions/business_action';
 // import { createComment, updateComment, deleteComment, fetchSingleComment } from './util/comment_api_util';
 // import { updateComment, createComment } from './actions/ui_action';
-// import { fetchSingleComment } from './actions/comment_action';
+import { fetchSingleComment, updateComment, createComment } from './actions/comment_action';
 import { create } from 'domain';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,14 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   window.store = store;
+  window.login = login;
   // window.fetchAllBusinesses = fetchAllBusinesses;
   // window.fetchAllCategories = fetchAllCategories;
   // window.fetchSingleCategory = fetchSingleCategory;
   // window.fetchSearchBarBusiness = fetchSearchBarBusiness;
   // window.fetchSearchCategory = fetchSearchCategory;
-  // window.createComment = createComment;
-  // window.updateComment = updateComment;
-  window.deleteComment = deleteComment;
+  window.createComment = createComment;
+  window.updateComment = updateComment;
+  // window.deleteComment = deleteComment;
   // window.fetchSingleComment = fetchSingleComment;
 
   ReactDOM.render(<Root store={store}/>, root);

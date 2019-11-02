@@ -45,9 +45,6 @@ class CreateCommentForm extends React.Component {
         return ele.className = "five-star";
       })
     } 
-
-
-
   }
 
   handleSubmit(e) {
@@ -68,6 +65,8 @@ class CreateCommentForm extends React.Component {
         </Link>
         )
     }
+
+    let showErrors = this.props.errors.map((err, idx) => <li key={idx}>{err}</li>)
     
     return (
         <div>
@@ -83,6 +82,7 @@ class CreateCommentForm extends React.Component {
                         <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="4">☆</li>
                         <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="5">☆</li>
                     </ul>
+                    <ul>{showErrors}</ul>
                     <textarea className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} cols="30" rows="10"></textarea>
                     {/* <input type="text" className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} /> */}
                     <input type="submit" className="submit-button" onClick={this.handleSubmit} value={this.state.createButton}/>

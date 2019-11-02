@@ -94,7 +94,9 @@ class UpdateCommentForm extends React.Component {
         </Link>
         )
     }
-
+    
+    let showErrors = this.props.errors.map((err, idx) => <li key={idx}>{err}</li>)
+    
     return (
 
       <div>
@@ -109,7 +111,7 @@ class UpdateCommentForm extends React.Component {
                     <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="4">☆</li>
                     <li name="star" className="orginal-star-color" onClick={this.handleClickStar} value="5">☆</li>
                 </ul>
-
+                <ul>{showErrors}</ul>
                 <textarea className="textarea" onChange={this.handleCommentBodyChange} value={this.state.body} cols="30" rows="10"></textarea>
                 <input className="submit-button" type="submit" onSubmit={this.handleSubmit} value={this.state.updateButton}/>
             </form>

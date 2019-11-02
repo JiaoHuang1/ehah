@@ -19,12 +19,11 @@ class Api::CommentsController < ApplicationController
     end
 
     def update
-        # debugger
         @comment = current_user.comments.find(params[:id])
         @business = @comment.business
         if @comment.update(comment_params)
             render 'api/comments/show' ###don't need to render anything???because it's gonna direct back to show page
-        else 
+        else
             render json: @comment.errors.full_messages, status: 422
         end
     end

@@ -7,7 +7,7 @@ import { createComment } from '../../actions/comment_action';
 const mapStateToProps = (state, ownProps) => {
   return {
       business: state.entities.businesses[ownProps.match.params.businessId] || { id: null, name: ""},
-      // createButton: state.ui.createButton || "Post Review"
+      errors: state.errors.comment,
     };
 };
 
