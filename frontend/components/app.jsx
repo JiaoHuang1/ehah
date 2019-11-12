@@ -26,7 +26,6 @@ const App = () => (
     <Route exact path="/search/categories" component={SearchByCategoryContainer} />
     <ProtectedRoute exact path="/comments/:commentId" component={updateCommentContainer} />
     <ProtectedRoute exact path="/businesses/:businessId/newcomment" component={createCommentContainer} />
-    
   </div>
 );
 

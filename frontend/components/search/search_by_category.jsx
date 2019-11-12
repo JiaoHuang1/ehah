@@ -44,20 +44,42 @@ class SearchBySearchBar extends React.Component {
         markers.map(marker => {
             let that = this;
             marker.addListener('mouseover', function() {
-                console.log(that.props.businesses[this.label - 1])
-                infowindow(that.props.businesses[this.label - 1]).open(map, marker)
+                // console.log(that.props.businesses[this.label - 1]);
+                console.log(infowindow1);
+                // console.log(infowindow(that.props.businesses[this.label - 1]));
+                infowindow(that.props.businesses[this.label - 1]).open(map, marker);
+                // infowindow1.open(map, marker);
             });
 
             marker.addListener('mouseout', function() {
-                infowindow(that.props.businesses[this.label - 1]).close();
+                console.log("mouseout");
+                console.log(infowindow1);
+                // console.log(infowindow(that.props.businesses[this.label - 1]));
+                // infowindow(that.props.businesses[this.label - 1]).close();
+                infowindow1.close();
+                // infowindow1.close();
             });
         });
         
-        var contentString = (business) => `<a href=/#/businesses/${business.id}>${business.name}</a>`;
-
+        var contentString = (business) => `
+            <div className="infowindow-main">
+                <div>
+                    <a href=/#/businesses/${business.id}>${business.name}</a> 
+                    <p>${business.address}</p>
+                </div>
+                <img className='business-index-page-item-img' src=${business.photoUrls[0]} />
+            </div>
+        `;
+        // <img className='business-index-page-item-img' src=${business.photoUrls[0]} />
         var infowindow = (business) => new google.maps.InfoWindow({
             content: contentString(business)
         });
+
+        var infowindow1 = new google.maps.InfoWindow({
+            content: "hello"
+        });
+
+
     }
 
 
