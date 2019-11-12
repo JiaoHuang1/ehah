@@ -11,6 +11,7 @@ import createCommentContainer from './comment/create_comment_container';
 // import BusinessSearchByCategoryContainer from './business/business_search_by_category_container';
 import Contact from './contact_footer/contact';
 import Splash from './splash/splash';
+import { ProtectedRoute } from "../util/route_util";
 
 
 const App = () => (
@@ -23,8 +24,8 @@ const App = () => (
     <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
     <Route exact path="/search/businesses" component={SearchBySearchBarContainer} />
     <Route exact path="/search/categories" component={SearchByCategoryContainer} />
-    <Route exact path="/comments/:commentId" component={updateCommentContainer} />
-    <Route exact path="/businesses/:businessId/newcomment" component={createCommentContainer} />
+    <ProtectedRoute exact path="/comments/:commentId" component={updateCommentContainer} />
+    <ProtectedRoute exact path="/businesses/:businessId/newcomment" component={createCommentContainer} />
     
   </div>
 );
