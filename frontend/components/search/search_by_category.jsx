@@ -50,7 +50,7 @@ class SearchBySearchBar extends React.Component {
                 <img className='business-index-page-item-img' src=${business.photoUrls[0]} />
             </div>
         `;
-        // <img className='business-index-page-item-img' src=${business.photoUrls[0]} />
+        
         var infowindow = (business) => new google.maps.InfoWindow({
             content: contentString(business)
         });

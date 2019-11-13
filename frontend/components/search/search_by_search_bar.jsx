@@ -43,34 +43,27 @@ class SearchBySearchBar extends React.Component {
             });
         })
 
-        var contentString = (business) => `<a href=/#/businesses/${business.id}>${business.name}</a>`;
-
+        var contentString = (business) => `
+            <div className="infowindow-main">
+                <div>
+                    <a href=/#/businesses/${business.id}>${business.name}</a> 
+                    <p>${business.address}</p>
+                </div>
+                <img className='business-index-page-item-img' src=${business.photoUrls[0]} />
+            </div>
+        `;
+    
         var infowindow = (business) => new google.maps.InfoWindow({
             content: contentString(business)
         });
 
-        var infowindow2 = new google.maps.InfoWindow({
-            content: "<p>hello</p>"
-        });
-
-        var infowindow3 = (business) => new google.maps.InfoWindow.setContent(contentString(business));
-
         markers.map(marker => {
-            let that = this;
+            let iw = infowindow(this.props.businesses[parseInt(marker.label) - 1]);
             marker.addListener('mouseover', function() {
-                // console.log("open")
-                // console.log(infowindow(that.props.businesses[this.label - 1]))
-                // infowindow(that.props.businesses[this.label - 1]).open(map, marker)
-                infowindow2.open(map, marker);
-                // infowindow3(that.props.businesses[this.label - 1]).open(map, marker)
+                iw.open(map, marker);
             });
-
             marker.addListener('mouseout', function() {
-                // console.log("close")
-                // console.log(infowindow(that.props.businesses[this.label - 1]))
-                // infowindow(that.props.businesses[this.label - 1]).close();
-                infowindow2.close();
-                // infowindow3(that.props.businesses[this.label - 1]).close();
+                iw.close();
             });
         });
         
