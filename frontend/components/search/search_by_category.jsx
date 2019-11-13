@@ -57,12 +57,14 @@ class SearchBySearchBar extends React.Component {
 
         markers.map(marker => {
             let iw = infowindow(this.props.businesses[parseInt(marker.label) - 1]);
+            console.log(iw.content)
             marker.addListener('mouseover', function() {
                 iw.open(map, marker);
             });
             marker.addListener('mouseout', function() {
                 iw.close();
             });
+          
         });
     }
 
