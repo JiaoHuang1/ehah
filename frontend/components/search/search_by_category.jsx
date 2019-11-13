@@ -41,26 +41,6 @@ class SearchBySearchBar extends React.Component {
             });
         })
 
-        markers.map(marker => {
-            let that = this;
-            marker.addListener('mouseover', function() {
-                // console.log(that.props.businesses[this.label - 1]);
-                console.log(infowindow1);
-                // console.log(infowindow(that.props.businesses[this.label - 1]));
-                infowindow(that.props.businesses[this.label - 1]).open(map, marker);
-                // infowindow1.open(map, marker);
-            });
-
-            marker.addListener('mouseout', function() {
-                console.log("mouseout");
-                console.log(infowindow1);
-                // console.log(infowindow(that.props.businesses[this.label - 1]));
-                // infowindow(that.props.businesses[this.label - 1]).close();
-                infowindow1.close();
-                // infowindow1.close();
-            });
-        });
-        
         var contentString = (business) => `
             <div className="infowindow-main">
                 <div>
@@ -75,13 +55,16 @@ class SearchBySearchBar extends React.Component {
             content: contentString(business)
         });
 
-        var infowindow1 = new google.maps.InfoWindow({
-            content: "hello"
+        markers.map(marker => {
+            let iw = infowindow(this.props.businesses[parseInt(marker.label) - 1]);
+            marker.addListener('mouseover', function() {
+                iw.open(map, marker);
+            });
+            marker.addListener('mouseout', function() {
+                iw.close();
+            });
         });
-
-
     }
-
 
     render() {
         let businessItem;
