@@ -16,12 +16,18 @@ const Footer = () => {
         <a href="https://github.com/JiaoHuang1">
           <img className="footer-contact-logo" src={window.githubLogo}/>
         </a>
-        <Link to="/contact">
-          <img className="footer-contact-logo" src={window.emailLogo}/>
-        </Link>
-        <Link to="/contact">
+        <a href="http://www.jiaohuang1.com/">
+          <img className="footer-contact-logo" src={window.portfolioIcon}/>
+        </a>
+        <a href="http://www.jiaohuang1.com/manhattan_housing/">
+          <img className="footer-contact-logo" src={window.manhattanHousingIcon}/>
+        </a>
+        <a href="https://angel.co/jiao-huang">
+          <img className="footer-contact-logo" src={window.angellistLogo}/>
+        </a>
+        {/* <Link to="/contact">
           <img className="footer-contact-logo" src={window.phoneLogo}/>
-        </Link>
+        </Link> */}
       </div>  
 
       <img className="footer-img" src={window.footerImg}/>
