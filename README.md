@@ -1,6 +1,8 @@
 # eHah
 
-A single-page app inspired by Yelp where users can search for businesses, view their information and review them. It's a full stack project using React, Redux, Ruby on Rails, PostgreSQL, Webpack, AWS, Heroku HTML and CSS.
+A single-page app inspired by Yelp where users can search for businesses, view their information and review them. 
+
+[eHah Live](https://ehah.herokuapp.com/#/)
 
 ![ehah splash page](readme_img/ehah_splash_page_readme.gif)
 
