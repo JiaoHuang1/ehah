@@ -2,7 +2,8 @@
 
 A single-page app inspired by Yelp where users can search for businesses, view their information and review them. 
 
-[eHah Live](https://ehah.herokuapp.com/#/)
+[eHah Live](https://ehah.herokuapp.com/#/){:target="_blank" rel="noopener"}
+this is a seperator
 <a href="https://ehah.herokuapp.com/#/" target="_blank">eHah Live to new tab</a>
 
 ![ehah splash page](readme_img/ehah_splash_page_readme.gif)
