@@ -6,22 +6,20 @@ A single-page app inspired by Yelp where users can search for businesses, view t
 
 ![ehah splash page](readme_img/ehah_splash_page_readme.gif)
 
-Things you may want to cover:
+## Tech/Framework Used
 
-* Ruby version
+* Ruby on Rails
+* React / Redux
+* JavaScript
+* PostgreSQL
 
-* System dependencies
+## Features
 
-* Configuration
+* Users can sign up, sign in, log out of the website, and user can use demo login to access private features.
+* Browse business pages.
+* Search a keyword or location to find a business.
+* Business indexes by categories.
+* Logged in users can create, update and delete their own comments.
+* Search results also shows google maps of the business locations.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Feature Highlights
