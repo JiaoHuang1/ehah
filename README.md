@@ -27,6 +27,6 @@ A single-page app inspired by Yelp where users can search for businesses, view t
 
 ![ehah splash page](readme_img/search_by_category.gif)
 
-* Integrated Google Map API
+* Integrated google map API
 
 ![ehah splash page](readme_img/google_map_api.gif)
