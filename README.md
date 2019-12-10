@@ -30,3 +30,10 @@ A single-page app inspired by Yelp where users can search for businesses, view t
 * Integrated google map API
 
 ![ehah splash page](readme_img/google_map_api.gif)
+
+## How To Use
+* Clone git locally
+* Run 'bundle install' to install all the dependencies for this application.
+* Run 'npm install' to install the dependencies in the local node_modules folder.
+* Run 'rails s' to start rails server.
+* open http://localhost:3000/ in browser to use the application
